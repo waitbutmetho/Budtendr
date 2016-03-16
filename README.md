@@ -18,8 +18,8 @@ The goal of this is
 4. Open the directory http://localhost:8000 in any standard web browser.
 
 ## To Do
-
-Can someone suggest a good project management site? Trello? We gotta set that up dudes.
+https://github.com/Fallenstedt/Herbonomics/tree/master/Herbonomics_php
+https://trello.com/budtendrteam
 
 ## Known Bugs
 
@@ -28,9 +28,10 @@ _No Known Bugs at this Time._
 
 ## Technologies Used
 
-This web application was created using the_  [Silex micro-framework](http://silex.sensiolabs.org/)_, as well_ [Twig](http://twig.sensiolabs.org/)_, a template engine for php.
-
-Javascript? with Chai/Mocha for testing?
+* SASS
+* php
+* Bourbon
+* Flexbox
 
 ### License
 
