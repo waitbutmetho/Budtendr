@@ -22,6 +22,10 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   height: 609px;
+  a, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .top-menu {
@@ -90,7 +94,7 @@ input[type=checkbox]:checked ~ #menu{
 		margin-bottom: 1px;
 	}
 	/*Make all menu links full width*/
-	ul li, li a {
+	ul li, li {
 		width: 100%;
 	}
   /*Display 'show menu' link*/
