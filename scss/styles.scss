@@ -54,5 +54,47 @@ li {
   max-width: 123px;
   justify-content: flex-start;
 }
+/* Hamburger Navbar ------------------ */
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
 
 /* Banner-classes ------------------ */
+
+
+
+
+
+/* Media-Query ------------------ */
+@media screen and (max-width : 420px){
+	/*Make dropdown links appear inline*/
+	ul {
+		position: static;
+		display: none;
+	}
+	/*Create vertical spacing*/
+	li {
+		margin-bottom: 1px;
+	}
+	/*Make all menu links full width*/
+	ul li, li a {
+		width: 100%;
+	}
+  /*Display 'show menu' link*/
+	.show-menu {
+		display:block;
+	}
+}
