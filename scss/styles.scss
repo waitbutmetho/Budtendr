@@ -1,16 +1,58 @@
-form {
-  width: 50%;
-  margin:auto;
+/* Base Styles -------------------- */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@-ms-viewport {
+  width: device-width; }
+
+body {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+  background-color: lightgreen; /*change to brand color*/
 }
-label {
-  width:25%;
-}  
-label, input {
-  display: inline-block;
+
+
+/* Nav Bar-classes ------------------ */
+nav {
+  background: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 609px;
 }
-input {
-  width: 75%;
+
+.top-menu {
+  display: flex;
+  justify-content: space-between;
 }
-input[type=submit] {
-  width:100%;
+
+ul {
+  margin: 0;
+  display: flex;
+  align-items: baseline; }
+  ul li:last-child {
+    padding: 0.4rem 0.8rem;
+    border: 2px solid #fff;
+    border-radius: 3px; }
+
+li {
+  list-style: none;
+  font-size: 1.5rem;
+  margin: 0 13px;
+  padding: 20px 11px;
+  text-align: center;
+  color: #fff;
 }
+
+.logo img {
+  display: flex;
+  margin: -10px 0 0 0;
+  padding: 0 0 0 10px;
+  max-width: 123px;
+  justify-content: flex-start;
+}
+
+/* Banner-classes ------------------ */
