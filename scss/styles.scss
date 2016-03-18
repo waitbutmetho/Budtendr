@@ -84,6 +84,7 @@ li {
   height: 65px;
 }
 
+
 .flex-form {
     flex: 1 1 50%;
     border: solid 1px blue;
@@ -94,4 +95,26 @@ li {
   button {
     width: 9%;
   }
+
+
+/* Media-Query ------------------ */
+@media screen and (max-width : 420px){
+	/*Make dropdown links appear inline*/
+	ul {
+		position: static;
+		display: none;
+	}
+	/*Create vertical spacing*/
+	li {
+		margin-bottom: 1px;
+	}
+	/*Make all menu links full width*/
+	ul li, li {
+		width: 100%;
+	}
+  /*Display 'show menu' link*/
+	.show-menu {
+		display:block;
+	}
+
 }
