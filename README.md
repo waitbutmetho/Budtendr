@@ -8,7 +8,6 @@ Alex:
 
 
 ##Setup
-
 Clone
 Bower nstall
 npm install
