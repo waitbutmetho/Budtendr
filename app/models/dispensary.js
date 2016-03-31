@@ -6,5 +6,9 @@ export default DS.Model.extend({
   email: DS.attr(),
   website: DS.attr(),
   hours: DS.attr(),
-  //Alex: I do not know what else we can add here. I know dispensaries should be able to include their social media accounts(facebook, instagram, twitter, google+), photos. Should we create different models for this? 
+  about: DS.attr(),
+  deals: DS.attr(),
+  updates: DS.attr(),
+  
+  //Alex: I do not know what else we can add here. I know dispensaries should be able to include their social media accounts(facebook, instagram, twitter, google+), photos. Should we create different models for this?
 });
