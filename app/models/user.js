@@ -5,5 +5,5 @@ export default DS.Model.extend({
   password: DS.attr(),
   email: DS.attr(),
   strainreviews: DS.attr(),
-  dispensaryreviews: DS.attr(),
+  dispensaryreviews: DS.attr()
 });
