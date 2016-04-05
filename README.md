@@ -1,53 +1,50 @@
-# Budtendr
+# _Project Title_
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+#### _A simple template, 3.__.2016_
 
-## Prerequisites
+### By _** Nicholas Jensen-Hay and **_
 
-You will need the following things properly installed on your computer.
+## Description
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+_This web app is designed to ._
 
-## Installation
+_The goal of this project is to ._
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+_The project was put together using ._
 
-## Running / Development
+## Setup/Installation
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+#### System Requirements
 
-### Code Generators
+1. [Node.js](https://nodejs.org/en/) w/ [npm](https://www.npmjs.com/)
+2. [Bower](http://bower.io/)
 
-Make use of the many generators for code, try `ember help generate` for more details
+#### Installation
 
-### Running Tests
+* After cloning the repo, simply run
 
-* `ember test`
-* `ember test --server`
+        ./serve.sh
 
-### Building
+* in bash to config atom, install node and bower dependencies and build your project
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+* Gulp is used to handle both building the site and launching a server to host the site...
 
-### Deploying
+## Known Bugs
 
-Specify what it takes to deploy your app.
+_This application is not fully designed and may have unknown bugs._
 
-## Further Reading / Useful Links
+## Support and contact details
 
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+_If you have any questions, concerns, or feedback, please contact the authors through_ [gitHub](https://github.com/hreacon/).
 
+## Technologies Used
+
+* _This project was built on [Node.js](https://nodejs.org/en/)._
+* _Dependencies were handled with [npm](https://www.npmjs.com/) and [Bower](http://bower.io/)._
+* _[Gulp](http://gulpjs.com/) is an awesome asset pipeline used in this project._
+
+### License
+
+MIT License.
+
+Copyright (c) 2016 **_Nicholas Jensen-Hay_**
