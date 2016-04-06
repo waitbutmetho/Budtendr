@@ -4,7 +4,7 @@ form {
 }
 label {
   width:25%;
-}  
+}
 label, input {
   display: inline-block;
 }
@@ -13,4 +13,22 @@ input {
 }
 input[type=submit] {
   width:100%;
+}
+.nav-bar {
+  margin-top:10px;
+}
+nav-bar div, nav-bar li {
+   display: inline-block;
+}
+
+nav-bar a {
+  padding:10px;
+  margin:10px;
+  border:1px solid black;
+}
+
+nav-bar ul {
+  position: absolute;
+  right:0;
+  top:10px;
 }
