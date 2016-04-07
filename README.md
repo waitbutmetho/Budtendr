@@ -1,6 +1,6 @@
-# _Project Title_
+Budtendr 2.0.0
 
-#### _A simple template, 3.__.2016_
+####  _4.7.2016_
 
 ### By _** Nicholas Jensen-Hay, Alexander Fallenstedt, Mike Dada, Joshua Gustafason **_
 
