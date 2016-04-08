@@ -1,0 +1,87 @@
+
+## Site structure:
+
+landing page
+  - shows a short list of "updates" of all the dispensaries and users and reviews
+  - a short about us
+  - search field on "jumbotron"
+  - Link to find the highest THC bud in portland
+search results page
+  - List the strains
+    - strains lead to dispensary
+dispensary page
+  - list dispensary info
+    - social media links
+    - their homepage
+    - whatever they want
+    - photos
+    - maps
+    - if they want, we can host a dedicated site
+    - photography services
+  - list available strains
+  - reviews ++++++
+  - social media posts "updates"
+    - let people know about deals
+    - auto generate posts
+      - IE: Dispensary X added 14 strains today!
+      - the dispensary has to click a button to send the update
+dispensary list page
+  - list all dispensaries
+users profile
+  - can follow dispensaries to get their updates
+  - can see their reviews of dispensaries and the dispenary replies
+  - user icons, upload custom or use our generic set
+login modal
+  - username
+  - password
+  - forgot password/username?
+sign up page
+  - dispensaries create profiles. Then they submit it to us for review. If it's legit, and it's a real dispensary, then it goes public.
+    - dispensary employees have their own account linked to that specific dispensary
+  - users create profiles and confirm with email addresses?
+listing strains page
+  - list all the strains
+  - make them sortable
+  - pagination
+  = GO with divs not a table. We can still order it, and when we display on small screens we can change it easier.
+  = Tablesaw javascript plugin
+
+Components:
+  Users:
+    Strain list
+    Dispensary List
+    Login
+    "updates"
+    review list
+    new review
+    nav-bar
+    search results
+  Dispensaries:
+    strain C
+    strain U
+    strain RD
+    make updates
+      use auto generated updates
+
+Routes:
+  User View:
+    index
+    strains
+    search
+    dispensary
+    list-dispensary
+    profile
+    sign up
+  Dispensary Routes:
+    Dispensary splash page
+      - Go to the other routes
+      - post "updates" to their account
+    Dispensary Profile
+    manage strains
+    manage employees
+
+
+Other notes:
+  Dispensaries will hold two price sets, one for medical one for recreational
+  strain tables can flip to medical prices or recreational prices
+  Users that are logged in can  set the default to medical prices
