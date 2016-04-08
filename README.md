@@ -1,16 +1,13 @@
-# _Project Title_
+#Budtendr 2.0.0
 
-#### _A simple template, 3.__.2016_
+####  _4.7.2016_
 
-### By _** Nicholas Jensen-Hay and **_
+### By _** Nicholas Jensen-Hay, Alexander Fallenstedt, Mike Dada, Joshua Gustafason **_
 
 ## Description
 
-_This web app is designed to ._
 
-_The goal of this project is to ._
-
-_The project was put together using ._
+_The project was put together using Angular2, MySQL, and das b00tstrap ya.
 
 ## Setup/Installation
 
@@ -31,11 +28,17 @@ _The project was put together using ._
 
 ## Known Bugs
 
-_This application is not fully designed and may have unknown bugs._
+Please organize bugs here by the pages they are on: 
 
-## Support and contact details
+*Index Page:
 
-_If you have any questions, concerns, or feedback, please contact the authors through_ [gitHub](https://github.com/hreacon/).
+*Dispensary Page
+
+*User Page
+
+*Search Page
+
+
 
 ## Technologies Used
 
@@ -47,4 +50,4 @@ _If you have any questions, concerns, or feedback, please contact the authors th
 
 MIT License.
 
-Copyright (c) 2016 **_Nicholas Jensen-Hay_**
+Copyright (c) 2016 **_Nicholas Jensen-Hay, Alexander Fallenstedt, Mike Dada, Joshua Gustafason_**
