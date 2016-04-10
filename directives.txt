@@ -80,8 +80,16 @@ Routes:
     manage strains
     manage employees
 
+    Two teams:
+      Team Router -
+        Figures out angular routing and gets the basics of the site and routes to work
+
+      Team Components -
+        Starts writing components
+
 
 Other notes:
   Dispensaries will hold two price sets, one for medical one for recreational
   strain tables can flip to medical prices or recreational prices
   Users that are logged in can  set the default to medical prices
+  Let users have friends and message them, sharing strains or what have you.
