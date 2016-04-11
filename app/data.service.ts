@@ -22,4 +22,9 @@ export class DataService {
       .map(res => res.json())
       .do(data => console.log(data));
   }
+  getDispensaries(page=0) {
+    return this._http.get(baseURL+'dispensarylist.php?page='+page)
+      .map(res => res.json())
+      .do(data => console.log(data));
+  }
 }

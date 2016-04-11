@@ -5,7 +5,7 @@ import { DataService } from './data.service';
 @Component({
     directives:[StrainViewComponent],
     template: `
-      <h1>Strains:</h1>
+      <h1>Strains: {{page}}</h1>
       <button (click)="nextPage()">Next Page</button><button (click)="prevPage()">Prev Page</button>
       <strain-view *ngFor="#strain of strains" [strain]="strain">
 
@@ -16,6 +16,7 @@ import { DataService } from './data.service';
 
 export class AllStrainComponent implements OnInit{
   strains = [];
+  maxpage=0;
   page = 0;
   ngOnInit() {
 
@@ -25,7 +26,11 @@ export class AllStrainComponent implements OnInit{
   }
   getStrains() {
     var self = this;
-    this._dataService.getStrains(this.page).subscribe(strains => self.strains = strains.strains);
+    this._dataService.getStrains(this.page).subscribe(function(strains){
+      self.strains = strains.strains;
+      self.maxpage = strains.maxpage;
+      console.log(self.maxpage);
+    });
   }
   nextPage() {
     this.setPage(1);
@@ -35,6 +40,8 @@ export class AllStrainComponent implements OnInit{
   }
   setPage(num) {
     this.page = this.page + num;
+    if(this.page < 0) this.page = 0;
+    if(this.page > this.maxpage) this.page = this.maxpage;
     this.getStrains();
 
   }
