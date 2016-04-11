@@ -5,6 +5,7 @@ import { Component } from 'angular2/core';
     template: `
       <div class="container">
         <form class="form-horizontal">
+        <h3>Sign up for a Budtendr account</h3>
           <div class="form-group">
             <label class="control-label col-sm-2" for="username">Username</label>
             <div class="col-sm-10">
@@ -24,6 +25,7 @@ import { Component } from 'angular2/core';
             </div>
           </div>
               <button class="btn btn-success">Submit</button>
+              <button class="btn btn-primary">I'm a Dispensary Owner</button>
         </form>
       </div>
 
