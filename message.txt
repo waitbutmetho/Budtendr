@@ -1,1 +1,1 @@
-update data service to get strains
+displaying strains and pagination

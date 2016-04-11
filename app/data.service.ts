@@ -17,8 +17,9 @@ export class DataService {
     console.error( error );
     return Observable.throw(error.json().error || "Server Error");
   }
-  getStrains() {
-    return this._http.get(baseURL + 'strainlist.php')
-      .map(res => res.json());
+  getStrains(page=0) {
+    return this._http.get(baseURL + 'strainlist.php?page='+page)
+      .map(res => res.json())
+      .do(data => console.log(data));
   }
 }
