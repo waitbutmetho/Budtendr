@@ -5,6 +5,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 @Component({
   selector: 'my-app',
   template: `
+  <
   <header>
     <ul>
       <li>Home</li>
