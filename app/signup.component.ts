@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-
+import { Router } from 'angular2/router';
 
 @Component({
     template: `
@@ -25,8 +25,8 @@ import { Component } from 'angular2/core';
             </div>
           </div>
               <button class="btn btn-success">Submit</button>
-              <button class="btn btn-primary">I'm a Dispensary Owner</button>
         </form>
+        <button (click)="onNavigate()" class="btn btn-primary">I'm a Dispensary Owner</button>
       </div>
 
     `,
@@ -34,4 +34,10 @@ import { Component } from 'angular2/core';
 
 export class SignUpComponent{
 
+  constructor(private _router: Router){
+
+  }
+  onNavigate(){
+    this._router.navigate(['AddDispensary']);
+  }
 }
