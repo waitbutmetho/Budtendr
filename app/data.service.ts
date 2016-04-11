@@ -2,7 +2,7 @@ import { Injectable } from 'angular2/core';
 import { Http, Response } from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
 
-var baseURL = "http://localhost/budtendr/";
+var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
 
 @Injectable()
 export class DataService {
