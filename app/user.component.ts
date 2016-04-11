@@ -1,9 +1,9 @@
 import { Component } from 'angular2/core';
 
 
-@Component([
-
-])
+@Component({
+  template: `User`,
+})
 
 export class UserComponent{
 

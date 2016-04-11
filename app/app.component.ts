@@ -3,6 +3,7 @@ import {RouteConfig} from 'angular2/router';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {SearchComponent} from './search.component';
 import {DispensaryComponent} from './dispensary.component';
+import {UserComponent} from './user.component';
 
 @Component({
   selector: 'my-app',
@@ -12,7 +13,7 @@ import {DispensaryComponent} from './dispensary.component';
       <li>Home</li>
       <li><a [routerLink]="['Search']">Search</a></li>
       <li><a [routerLink]="['Dispensary']">Dispensary</a></li>
-      <li>User</li>
+      <li><a [routerLink]= "['User']"> User</a></li>
       <li>Sign Up</li>
     </ul>
   </header>
@@ -23,7 +24,8 @@ import {DispensaryComponent} from './dispensary.component';
 
 @RouteConfig([
   {path: '/search', name: 'Search', component: SearchComponent  },
-  {path: '/dispensary', name: 'Dispensary', component: DispensaryComponent }
+  {path: '/dispensary', name: 'Dispensary', component: DispensaryComponent },
+  {path: '/user', name: 'User', component: UserComponent }
 ])
 export class AppComponent {
 
