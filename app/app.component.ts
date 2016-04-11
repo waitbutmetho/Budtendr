@@ -2,7 +2,7 @@ import { Component } from 'angular2/core';
 
 @Component({
   selector: 'my-app',
-  template: `
+  template: `<h2>Budtendr</h2>
     
   `
 })
