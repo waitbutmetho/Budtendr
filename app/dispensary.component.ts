@@ -1,9 +1,9 @@
 import { Component } from 'angular2/core';
 
 
-@Component([
-
-])
+@Component({
+    template: `Dispensary Page`,
+})
 
 export class DispensaryComponent{
 
