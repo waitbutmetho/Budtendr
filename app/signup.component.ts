@@ -2,9 +2,9 @@ import { Component } from 'angular2/core';
 
 
 @Component({
-  template: `User`,
+    template: `Sign Up`,
 })
 
-export class UserComponent{
+export class SignUpComponent{
 
 }
