@@ -11,7 +11,6 @@ import {AddStrainComponent} from './add-strain.component';
 @Component({
   selector: 'my-app',
   template: `
-  <
   <header>
     <ul>
       <li>Home</li>
