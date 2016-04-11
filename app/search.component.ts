@@ -1,10 +1,12 @@
 import { Component } from 'angular2/core';
 
+@Component({
 
-@Component([
+  template: `Search Page`,
 
-])
+})
+
 
 export class SearchComponent{
-  
+
 }
