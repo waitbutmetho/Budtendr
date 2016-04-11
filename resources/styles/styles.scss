@@ -14,3 +14,13 @@ input {
 input[type=submit] {
   width:100%;
 }
+.jumbotron{
+  position: relative;
+  z-index:-101;
+
+}
+video#bgvid {
+  height:70vh;
+  width:100vw;
+
+}
