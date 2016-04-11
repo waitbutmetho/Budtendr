@@ -83,7 +83,8 @@ Routes:
     Two teams:
       Team Router -
         Figures out angular routing and gets the basics of the site and routes to work
-
+      PHP Team -
+        Figure out backend data connection
       Team Components -
         Starts writing components
 

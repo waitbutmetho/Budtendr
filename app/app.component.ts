@@ -30,7 +30,6 @@ import {AllDispensariesComponent} from './all-dispensaries.component';
   `,
     directives: [ROUTER_DIRECTIVES]
 })
-
 @RouteConfig([
   {path: '/search', name: 'Search', component: SearchComponent  },
   {path: '/dispensary', name: 'Dispensary', component: DispensaryComponent },
@@ -40,7 +39,6 @@ import {AllDispensariesComponent} from './all-dispensaries.component';
   {path: '/add-strain', name: 'AddStrain', component: AddStrainComponent },
   {path: '/all-strain', name: 'AllStrain', component: AllStrainComponent },
   {path: '/all-dispensaries', name: 'AllDispensaries', component: AllDispensariesComponent },
-
 ])
 export class AppComponent {
 
