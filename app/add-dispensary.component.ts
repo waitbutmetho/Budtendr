@@ -2,7 +2,7 @@ import { Component } from 'angular2/core';
 
 
 @Component({
-    template: `add-dispensary`,
+    templateUrl: 'app/add-dispensary.component.html',
 
 })
 

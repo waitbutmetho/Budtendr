@@ -12,22 +12,7 @@ import {AllDispensariesComponent} from './all-dispensaries.component';
 
 @Component({
   selector: 'my-app',
-  template: `
-  <header>
-    <ul>
-      <li>Home</li>
-      <li><a [routerLink]="['Search']">Search</a></li>
-      <li><a [routerLink]="['Dispensary']">Dispensary</a></li>
-      <li><a [routerLink]="['User']"> User</a></li>
-      <li><a [routerLink]="['SignUp']">Sign Up</a></li>
-      <li><a [routerLink]="['AddDispensary']">Add Dispensary</a></li>
-      <li><a [routerLink]="['AddStrain']">Add Strain</a></li>
-      <li><a [routerLink]="['AllStrain']">All Strains</a></li>
-      <li><a [routerLink]="['AllDispensaries']">All Dispensaries</a></li>
-    </ul>
-  </header>
-  <router-outlet></router-outlet>
-  `,
+  templateUrl: 'app/app.component.html',
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
