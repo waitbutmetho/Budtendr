@@ -7,6 +7,8 @@ import {UserComponent} from './user.component';
 import {SignUpComponent} from './signup.component';
 import {AddDispensaryComponent} from './add-dispensary.component';
 import {AddStrainComponent} from './add-strain.component';
+import {AllStrainComponent} from './all-strain.component';
+import {AllDispensariesComponent} from './all-dispensaries.component';
 
 @Component({
   selector: 'my-app',
@@ -16,10 +18,12 @@ import {AddStrainComponent} from './add-strain.component';
       <li>Home</li>
       <li><a [routerLink]="['Search']">Search</a></li>
       <li><a [routerLink]="['Dispensary']">Dispensary</a></li>
-      <li><a [routerLink]= "['User']"> User</a></li>
+      <li><a [routerLink]="['User']"> User</a></li>
       <li><a [routerLink]="['SignUp']">Sign Up</a></li>
       <li><a [routerLink]="['AddDispensary']">Add Dispensary</a></li>
       <li><a [routerLink]="['AddStrain']">Add Strain</a></li>
+      <li><a [routerLink]="['AllStrain']">All Strains</a></li>
+      <li><a [routerLink]="['AllDispensaries']">All Dispensaries</a></li>
     </ul>
   </header>
   <router-outlet></router-outlet>
@@ -34,6 +38,8 @@ import {AddStrainComponent} from './add-strain.component';
   {path: '/sign-up', name: 'SignUp', component: SignUpComponent },
   {path: '/add-dispensary', name: 'AddDispensary', component: AddDispensaryComponent },
   {path: '/add-strain', name: 'AddStrain', component: AddStrainComponent },
+  {path: '/all-strain', name: 'AllStrain', component: AllStrainComponent },
+  {path: '/all-dispensaries', name: 'AllDispensaries', component: AllDispensariesComponent },
 
 ])
 export class AppComponent {
