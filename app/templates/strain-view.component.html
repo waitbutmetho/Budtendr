@@ -1,12 +1,42 @@
-
-
-  <td>{{strain.name}}</td>
-  <td>{{strain.thc}}%</td>
-  <td>{{strain.cbd}}%</td>
-  <td>{{strain.geno}}</td>
-  <td>{{strain.organic}}</td>
-  <td>10</td>
-  <td>35</td>
-  <td>70</td>
-  <td>140</td>
-  <td>200</td>
+<div class="strain__header">
+  <div class="strain__name">
+    <p>{{strain.geno}}</p>
+    <h4>{{strain.name}}</h4>
+  </div>
+  <div class="strain__percent">
+    <div class="strain__thc">
+      <p>THC</p>
+      <h4>{{strain.thc}}%</h4>
+    </div>
+    <div class="strain__cbd">
+      <p>cbd</p>
+      <h4>{{strain.cbd}}%</h4>
+    </div>
+  </div>
+  <div class="strain__organic">
+    <p>Clean Green Certified</p>
+    <h4>{{strain.organic}}</h4>
+  </div>
+  <div class="strain__price">
+    <div class="strain__gram">
+      <p>gram</p>
+      <h4>{{strain.rec_price_gram}}</h4>
+    </div>
+    <div class="strain__eighth">
+      <p>1/8</p>
+      <h4>{{strain.rec_price_eighth}}</h4>
+    </div>
+    <div class="strain__quarter">
+      <p>1/4</p>
+      <h4>{{strain.rec_price_quarter}}</h4>
+    </div>
+    <div class="strain__half">
+      <p>1/2</p>
+      <h4>{{strain.rec_price_half}}</h4>
+    </div>
+    <div class="strain__ounce">
+      <p>Ounce</p>
+      <h4>{{strain.rec_price_ounce}}</h4>
+    </div>
+  </div>
+</div>

@@ -1,22 +1,12 @@
 <div class="container">
-  <button (click)="prevPage()">Prev Page</button><button (click)="nextPage()">Next Page</button>{{page}}
-  <table>
-    <thead>
-      <tr>
-        <th>Strain</th>
-        <th>THC</th>
-        <th>CBD</th>
-        <th>Species</th>
-        <th>Organic</th>
-        <th>Gram</th>
-        <th>1/8</th>
-        <th>1/4</th>
-        <th>1/2</th>
-        <th>oz</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="strain-view" *ngFor="#strain of strains" [strain]="strain"></tr>
-    </tbody>
-  </table>
+  <div class="button__bar">
+    <a (click)="prevPage()" class="button prev">Previous</a>
+    <a (click)="nextPage()" class="button next">Next</a>
+  </div>
+  <strain-view *ngFor="#strain of strains" [strain]="strain"></strain-view>
+  <div class="button__bar">
+    <a (click)="prevPage()" class="button prev">Previous</a>
+    <a (click)="nextPage()" class="button next">Next</a>
+  </div>
+
 </div>

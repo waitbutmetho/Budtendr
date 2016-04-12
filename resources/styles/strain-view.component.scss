@@ -1,4 +1,28 @@
-td {
-  padding: 15px;
-  text-align: left;
+.strain__header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px dashed red;
+  width: 100%;
+}
+.strain__percent{
+  border: 1px solid blue;
+  justify-content: space-between;
+  display: flex;
+  width: 200px;
+}
+
+.strain__name {
+  border: 1px solid green;
+  width: 200px;
+}
+
+.strain__organic {
+  border: 1px solid orange;
+}
+
+.strain__price {
+  display: flex;
+  border: 1px solid salmon;
+  justify-content: space-between;
+  width: 500px;
 }

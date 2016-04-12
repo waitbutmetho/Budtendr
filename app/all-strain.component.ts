@@ -29,12 +29,12 @@ export class AllStrainComponent implements OnInit{
     });
   }
   nextPage() {
-    this.setPage(1);
+    this.incrementPage(1);
   }
   prevPage() {
-    this.setPage(-1);
+    this.incrementPage(-1);
   }
-  setPage(num) {
+  incrementPage(num) {
     this.page = this.page + num;
     if(this.page < 0) this.page = 0;
     if(this.page > this.maxpage) this.page = this.maxpage;
