@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-transparent">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -12,11 +12,12 @@
             </button>
             <a class="navbar-brand" href="#">Budtendr</a>
         </div>
-        <form class="navbar-form navbar-left" role="search" action="search.php" method="post">
+
+        <form class="navbar-form navbar-left" role="search">
              <div class="input-group">
-               <input id="searchBar" type="text" class="form-control" placeholder="Search" name="search" id="srch-term">
+               <input id="searchBar" type="text" class="form-control" placeholder="Search" name="search" id="search-term">
                <div class="input-group-btn">
-                 <button id="searchButtonHeader" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                 <button id="searchButtonHeader" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
                </div>
              </div>
          </form>
@@ -32,6 +33,7 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+  <h2 class="headline">Budtendr</h2>
       <ul>
         <li>Home</li>
         <li><a [routerLink]="['Search']">Search</a></li>
@@ -41,6 +43,14 @@
         <li><a [routerLink]="['AddStrain']">Add Strain</a></li>
         <li><a [routerLink]="['AllStrain']">All Strain</a></li>
         <li><a [routerLink]="['AllDispensaries']">All Dispensaries</a></li>
+
+        <div id="searchBar" class="input-group input-group-lg">
+          <input type="text" class="form-control" placeholder="Blue Dream..." aria-describedby="sizing-addon1">
+        </div>
       </ul>
     </header>
+
+
+
+
     <router-outlet></router-outlet>
