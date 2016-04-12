@@ -7,5 +7,7 @@ import { Component } from 'angular2/core';
 })
 
 export class AddStrainComponent{
-
+  onSubmit(values) {
+    console.log(values);
+  }
 }
