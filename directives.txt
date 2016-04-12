@@ -1,7 +1,7 @@
 
 ## Site structure:
 
-landing page
+landing page - EXISTS, NO CONTENT
   - shows a short list of "updates" of all the dispensaries and users and reviews
   - a short about us
   - search field on "jumbotron"
@@ -9,7 +9,7 @@ landing page
 search results page
   - List the strains
     - strains lead to dispensary
-dispensary page
+dispensary page - WORKING, UNSTYLED
   - list dispensary info
     - social media links
     - their homepage
@@ -25,12 +25,9 @@ dispensary page
     - auto generate posts
       - IE: Dispensary X added 14 strains today!
       - the dispensary has to click a button to send the update
-dispensary list page
+dispensary list page - WORKING, UNSTYLED
   - list all dispensaries
-users profile
-  - can follow dispensaries to get their updates
-  - can see their reviews of dispensaries and the dispenary replies
-  - user icons, upload custom or use our generic set
+  - link dispensary to its own page
 login modal
   - username
   - password
@@ -39,12 +36,16 @@ sign up page
   - dispensaries create profiles. Then they submit it to us for review. If it's legit, and it's a real dispensary, then it goes public.
     - dispensary employees have their own account linked to that specific dispensary
   - users create profiles and confirm with email addresses?
-listing strains page
+listing strains page - WORKING, UNSTYLED
   - list all the strains
   - make them sortable
   - pagination
   = GO with divs not a table. We can still order it, and when we display on small screens we can change it easier.
   = Tablesaw javascript plugin
+users profile - MVP ?
+  - can follow dispensaries to get their updates
+  - can see their reviews of dispensaries and the dispenary replies
+  - user icons, upload custom or use our generic set
 
 Components:
   Users:
@@ -90,11 +91,13 @@ Routes:
 
   Tuesday:
     Get the strain table showing nicely - alex and tablesaw?
-    pull individual dispensaries from service - Nick
-    post form data from service - Nick
+    Get the dispensary list table showing nicely - alex
     sign up form sends info to service - josh
     add dispensary form sends info to service - josh
     background video for splash page
+    pull individual dispensaries from service - Nick DONE
+    post form data from service - Nick HOOKED UP
+
 
 
 
