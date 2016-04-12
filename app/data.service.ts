@@ -9,10 +9,6 @@ export class DataService {
   constructor(private _http: Http) {
 
   }
-  getData() {
-    return this._http.get(baseURL + 'request.php')
-      .map(res => res.json());
-  }
   handleError(error: Response) {
     console.error( error );
     return Observable.throw(error.json().error || "Server Error");
@@ -26,5 +22,34 @@ export class DataService {
     return this._http.get(baseURL+'dispensarylist.php?page='+page)
       .map(res => res.json())
       .do(data => console.log(data));
+  }
+  getDispensary(id) {
+    return this._http.get(baseURL+'dispensary.php?id='+id)
+      .map(res => res.json())
+      .do(data => console.log(data));
+  }
+  login(user, pass) {
+
+  }
+  signUp(user, email, pass) {
+
+  }
+  addDispensary() {
+
+  }
+  search(term) {
+
+  }
+  addStrain() {
+
+  }
+  updateStrain() {
+
+  }
+  updateDispensary() {
+
+  }
+  updateUser() {
+
   }
 }
