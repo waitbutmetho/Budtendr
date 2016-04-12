@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-import {RouteConfig} from 'angular2/router';
+import {Router, RouteConfig, RouteParams} from 'angular2/router';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {SearchComponent} from './search.component';
 import {DispensaryComponent} from './dispensary.component';
@@ -14,12 +14,12 @@ import {IndexComponent} from './index.component';
 @Component({
   selector: 'my-app',
   templateUrl: 'app/templates/app.component.html',
-    directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
   {path: '/', name: 'Index', component: IndexComponent  },
   {path: '/search', name: 'Search', component: SearchComponent  },
-  {path: '/dispensary', name: 'Dispensary', component: DispensaryComponent },
+  {path: '/dispensary/:id', name: 'Dispensary', component: DispensaryComponent },
   {path: '/user', name: 'User', component: UserComponent },
   {path: '/sign-up', name: 'SignUp', component: SignUpComponent },
   {path: '/add-dispensary', name: 'AddDispensary', component: AddDispensaryComponent },
