@@ -50,15 +50,33 @@ export class DataService {
   signUp(user, email, pass) {
 
   }
-  addDispensary() {
+  addDispensary(name, address, city, state, phone, email, hours, bio, icon) {
 
   }
   search(term) {
 
   }
-  addStrain() {
+  addStrain(dispensary_id, name, thc, cbd, organic, geno, rec_price_gram=999, rec_price_eighth=999, rec_price_quarter=999, description=999, rec_price_half=999, rec_price_ounce=999, med_price_gram=999, med_price_eighth=999, med_price_quarter=999, med_price_half=999, med_price_ounce=999) {
+    var values = [];
+    values.push(dispensary_id);
+    values.push(name);
+    values.push(thc);
+    values.push(cbd);
+    values.push(organic);
+    values.push(geno);
+    values.push(rec_price_gram);
+    values.push(rec_price_eighth);
+    values.push(rec_price_quarter);
+    values.push(description);
+    values.push(rec_price_half);
+    values.push(rec_price_ounce);
+    values.push(med_price_gram);
+    values.push(med_price_eighth);
+    values.push(med_price_quarter);
+    values.push(med_price_half);
+    values.push(med_price_ounce);
 
-  }
+}
   updateStrain() {
 
   }
