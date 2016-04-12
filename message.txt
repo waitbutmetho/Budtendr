@@ -1,1 +1,1 @@
-commit
+displaying strains and pagination

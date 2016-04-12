@@ -81,11 +81,22 @@ Routes:
     manage employees
 
     Two teams:
-      Team Router -
+      Team Router - DONE
         Figures out angular routing and gets the basics of the site and routes to work
-
+      PHP Team -
+        Figure out backend data connection
       Team Components -
         Starts writing components
+
+  Tuesday:
+    Get the strain table showing nicely - alex and tablesaw?
+    pull individual dispensaries from service - Nick
+    post form data from service - Nick
+    sign up form sends info to service - josh
+    add dispensary form sends info to service - josh
+    background video for splash page
+
+
 
 
 Other notes:
