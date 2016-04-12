@@ -5,6 +5,7 @@ import { DataService } from './data.service';
 @Component({
     directives:[StrainViewComponent],
     templateUrl: 'app/templates/all-strain.component.html',
+    styleUrls: ['../build/css/all-strain.component.css'],
 
 
 })
