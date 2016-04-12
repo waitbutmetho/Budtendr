@@ -12,7 +12,7 @@ import {AllDispensariesComponent} from './all-dispensaries.component';
 
 @Component({
   selector: 'my-app',
-  templateUrl: 'app/app.component.html',
+  templateUrl: 'app/templates/app.component.html',
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
