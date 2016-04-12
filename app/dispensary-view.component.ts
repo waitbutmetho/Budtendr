@@ -4,7 +4,7 @@ import { Component } from 'angular2/core';
   inputs: ['dispensary'],
   selector: "dispensary-view",
     template: `
-      <h1>{{dispensary.name}}</h1>
+      <h1><a href="#/dispensary/{{dispensary.id}}">{{dispensary.name}}</a></h1>
     `,
 
 })
