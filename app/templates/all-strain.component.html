@@ -1,0 +1,14 @@
+<button (click)="prevPage()">Prev Page</button><button (click)="nextPage()">Next Page</button>{{page}}
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>THC</th>
+      <th>CBD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="strain-view" *ngFor="#strain of strains" [strain]="strain"></tr>
+  </tbody>
+
+</table>

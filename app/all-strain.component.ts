@@ -4,13 +4,8 @@ import { DataService } from './data.service';
 
 @Component({
     directives:[StrainViewComponent],
-    template: `
-      <h1>Strains: {{page}}</h1>
-      <button (click)="nextPage()">Next Page</button><button (click)="prevPage()">Prev Page</button>
-      <strain-view *ngFor="#strain of strains" [strain]="strain">
+    templateUrl: 'app/templates/all-strain.component.html',
 
-      </strain-view>
-    `,
 
 })
 
