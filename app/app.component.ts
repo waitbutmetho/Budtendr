@@ -9,6 +9,7 @@ import {AddDispensaryComponent} from './add-dispensary.component';
 import {AddStrainComponent} from './add-strain.component';
 import {AllStrainComponent} from './all-strain.component';
 import {AllDispensariesComponent} from './all-dispensaries.component';
+import {IndexComponent} from './index.component';
 
 @Component({
   selector: 'my-app',
@@ -16,6 +17,7 @@ import {AllDispensariesComponent} from './all-dispensaries.component';
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
+  {path: '/', name: 'Index', component: IndexComponent  },
   {path: '/search', name: 'Search', component: SearchComponent  },
   {path: '/dispensary', name: 'Dispensary', component: DispensaryComponent },
   {path: '/user', name: 'User', component: UserComponent },
