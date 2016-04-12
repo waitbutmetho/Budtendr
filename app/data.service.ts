@@ -56,27 +56,10 @@ export class DataService {
   search(term) {
 
   }
-  addStrain(dispensary_id, name, thc, cbd, organic, geno, rec_price_gram=999, rec_price_eighth=999, rec_price_quarter=999, description=999, rec_price_half=999, rec_price_ounce=999, med_price_gram=999, med_price_eighth=999, med_price_quarter=999, med_price_half=999, med_price_ounce=999) {
-    var values = [];
-    values.push(dispensary_id);
-    values.push(name);
-    values.push(thc);
-    values.push(cbd);
-    values.push(organic);
-    values.push(geno);
-    values.push(rec_price_gram);
-    values.push(rec_price_eighth);
-    values.push(rec_price_quarter);
-    values.push(description);
-    values.push(rec_price_half);
-    values.push(rec_price_ounce);
-    values.push(med_price_gram);
-    values.push(med_price_eighth);
-    values.push(med_price_quarter);
-    values.push(med_price_half);
-    values.push(med_price_ounce);
-
-}
+  addStrain(values) {
+    var keys = "dispensary_id name thc cbd organic geno rec-price-gram rec-price-eighth rec-price-quarter rec-price-half rec-price-ounce med-price-gram med-price-eighth med-price-quarter med-price-half med-price-ounce".split(' ');
+    return this.postRequest('addstrain.php', this.makeData(keys, values));
+  }
   updateStrain() {
 
   }
