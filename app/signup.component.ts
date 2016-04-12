@@ -13,6 +13,12 @@ import { Router } from 'angular2/router';
             </div>
           </div>
           <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Email</label>
+            <div class="col-sm-10">
+                  <input ngControl="email" #email="ngForm" type="text" class="form-control" id="email">
+            </div>
+          </div>
+          <div class="form-group">
             <label class="control-label col-sm-2" for="password">Password</label>
             <div class="col-sm-10">
                   <input  ngControl="password" #password="ngForm" type="text" class="form-control" id="password">
