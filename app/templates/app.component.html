@@ -12,11 +12,11 @@
             </button>
             <a class="navbar-brand" href="#">Budtendr</a>
         </div>
-        <form class="navbar-form navbar-left" role="search" action="search.php" method="post">
+        <form class="navbar-form navbar-left" role="search">
              <div class="input-group">
-               <input id="searchBar" type="text" class="form-control" placeholder="Search" name="search" id="srch-term">
+               <input id="searchBar" type="text" class="form-control" placeholder="Search" name="search" id="search-term">
                <div class="input-group-btn">
-                 <button id="searchButtonHeader" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                 <button id="searchButtonHeader" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
                </div>
              </div>
          </form>
@@ -42,18 +42,14 @@
         <li><a [routerLink]="['AddStrain']">Add Strain</a></li>
         <li><a [routerLink]="['AllStrain']">All Strain</a></li>
         <li><a [routerLink]="['AllDispensaries']">All Dispensaries</a></li>
+        <form id="searchForm">
+            <input type="text" name="name" value="">
+            <button type="button" name="button"><i class="fa fa-search"></i></button>
+        </form>
       </ul>
     </header>
-    <div id="videodiv">
-      <form id="searchForm">
-          <input type="text" name="name" value="">
-          <button type="button" name="button"><i class="fa fa-search"></i></button>
-      </form>
 
 
-      <video autoplay loop id="bgvid">
-        <source src="resources/img/ALX_6432.webm" type="video/webm">
-      </video>
-    </div>
+
 
     <router-outlet></router-outlet>
