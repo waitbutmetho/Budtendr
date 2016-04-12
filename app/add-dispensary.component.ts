@@ -8,5 +8,7 @@ import { Component } from 'angular2/core';
 })
 
 export class AddDispensaryComponent{
-
+  onSubmit(values) {
+    console.log(values)
+  }
 }

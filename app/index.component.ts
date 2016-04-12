@@ -2,7 +2,7 @@ import { Component } from 'angular2/core';
 
 
 @Component({
-    template:`test`
+    templateUrl:"app/templates/index.component.html"
 
 })
 

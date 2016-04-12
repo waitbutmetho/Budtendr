@@ -27,7 +27,7 @@ export class DataService {
   postRequest(url, data) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    return this._http.post(baseURL+url, data, { headers: headers}).map(res => res.json());
+    return this._http.post(baseURL+url, data, { headers: headers})  .do(data => console.log(data));
   }
   getStrains(page=0) {
     return this._http.get(baseURL + 'strainlist.php?page='+page)
@@ -57,7 +57,7 @@ export class DataService {
 
   }
   addStrain(values) {
-    var keys = "dispensary_id name thc cbd organic geno rec-price-gram rec-price-eighth rec-price-quarter rec-price-half rec-price-ounce med-price-gram med-price-eighth med-price-quarter med-price-half med-price-ounce".split(' ');
+    var keys = "dispensary_id name thc cbd organic geno rec_price_gram rec_price_eighth rec_price_quarter rec_price_half rec_price_ounce med_price_gram med_price_eighth med_price_quarter med_price_half med_price_ounce".split(' ');
     return this.postRequest('addstrain.php', this.makeData(keys, values));
   }
   updateStrain() {
