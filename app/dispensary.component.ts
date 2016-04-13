@@ -1,20 +1,14 @@
 import { Component } from 'angular2/core';
 import { DataService } from './data.service';
 import { RouteParams } from 'angular2/router';
+import {TabContainerComponent} from './tab-container.component';
 
 
 @Component({
+  directives: [TabContainerComponent],
   providers: [DataService],
-    template: `
-    <h1>{{dispensary.name}}</h1>
-    <img src="{{dispensary.icon}}" alt="{{dispensary.name}} Logo" height="100" width="100">
-    <span>{{dispensary.address}}</span>
-    <span>{{dispensary.phone}}</span>
-    <span>{{dispensary.city}}</span>
-    <span>{{dispensary.state}}</span>
-    <p>{{dispensary.bio}}</p>
-
-    `,
+  templateUrl: 'app/templates/dispensary.component.html',
+    styleUrls: ['../build/css/dispensary.component.css'],
 })
 
 export class DispensaryComponent{
