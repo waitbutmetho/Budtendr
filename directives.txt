@@ -1,109 +1,80 @@
 
 ## Site structure:
 
-landing page - EXISTS, NO CONTENT
-  - shows a short list of "updates" of all the dispensaries and users and reviews
-  - a short about us
-  - search field on "jumbotron"
-  - Link to find the highest THC bud in portland
-search results page
-  - List the strains
-    - strains lead to dispensary
+Coder Projects:
+Josh - Forms/dispensary page
+Alex - Tables/front end pagination
+Nick - service/api
+Michael - Landing page/video/navbar
+
+landing page - EXISTS, SOME STYLING, NO CONTENT
+  - NavBar - EXISTS, PARTIALLY WORKING, PARTIALLY STYLED
+    - search bar
+    - links
+      - homepage
+      - list all strains
+      - list all dispensaries
+    - login|signup modal link
+  - What you can do on budtendr three headers - SOME HEADERS, NO CONTENT OR IMAGES
+    - Link to find the highest THC bud in portland
+  - a short about us - NONEXISTENT
+  - search field on "jumbotron" with background video - EXISTS, UNSTYLED, NOT WORKING
+search results page - NONEXISTENT
+  - Dispensary List
+    - Matching strains listed under dispensary
 dispensary page - WORKING, UNSTYLED
   - list dispensary info
-    - social media links
     - their homepage
-    - whatever they want
+    - whatever they want/bio
     - photos
     - maps
-    - if they want, we can host a dedicated site
-    - photography services
-  - list available strains
-  - reviews ++++++
-  - social media posts "updates"
-    - let people know about deals
-    - auto generate posts
-      - IE: Dispensary X added 14 strains today!
-      - the dispensary has to click a button to send the update
+    - social media links
+  - list available strains/menu
 dispensary list page - WORKING, UNSTYLED
   - list all dispensaries
   - link dispensary to its own page
-login modal
+login modal - SHOWING UP, NOT WORKING
   - username
   - password
   - forgot password/username?
-sign up page
-  - dispensaries create profiles. Then they submit it to us for review. If it's legit, and it's a real dispensary, then it goes public.
-    - dispensary employees have their own account linked to that specific dispensary
-  - users create profiles and confirm with email addresses?
-listing strains page - WORKING, UNSTYLED
+  - Link to create new account - WORKING
+sign up page - WORKING, UNSTYLED
+  - users create profiles
+  - dispensaries create profiles. Then they submit it to us for review.
+listing strains page - WORKING, HALF-STYLED, ALMOST PAGINATED
+  - Have a header on top of the table that turns into a fixed header as the user scrolls down
   - list all the strains
   - make them sortable
   - pagination
-  = GO with divs not a table. We can still order it, and when we display on small screens we can change it easier.
-  = Tablesaw javascript plugin
-users profile - MVP ?
-  - can follow dispensaries to get their updates
-  - can see their reviews of dispensaries and the dispenary replies
-  - user icons, upload custom or use our generic set
-
-Components:
-  Users:
-    Strain list
-    Dispensary List
-    Login
-    "updates"
-    review list
-    new review
-    nav-bar
-    search results
-  Dispensaries:
-    strain C
-    strain U
-    strain RD
-    make updates
-      use auto generated updates
-
-Routes:
-  User View:
-    index
-    strains
-    search
-    dispensary
-    list-dispensary
-    profile
-    sign up
-  Dispensary Routes:
-    Dispensary splash page
-      - Go to the other routes
-      - post "updates" to their account
-    Dispensary Profile
-    manage strains
-    manage employees
-
-    Two teams:
-      Team Router - DONE
-        Figures out angular routing and gets the basics of the site and routes to work
-      PHP Team -
-        Figure out backend data connection
-      Team Components -
-        Starts writing components
-
-  Tuesday:
-    Get the strain table showing nicely - alex and tablesaw?
-    Get the dispensary list table showing nicely - alex
-    sign up form sends info to service - josh
-    add dispensary form sends info to service - josh
-    background video for splash page
-    pull individual dispensaries from service - Nick DONE
-    post form data from service - Nick HOOKED UP
+  = Tablesaw javascript plugin - DEPRECATED. USELESS. JUNK. REMOVED.
+users profile
+  - Can view and update their info or delete their profile
+dispensary profile
+  - can edit their information
+  - can select a strain to edit and update and save
 
 
+Past MVP Notes:
+Add reviews first. Then add social media updates and following.
 
-
+Past MVP:
+  landing page
+    - shows a short list of "updates" of all the dispensaries and users and reviews
+  dispensary page
+    - reviews ++++++ - Past MVP
+    - social media posts "updates" - Past MVP
+      - let people know about deals
+      - auto generate posts
+        - IE: Dispensary X added 14 strains today!
+        - the dispensary has to click a button to send the update
+  user profile
+    - can follow dispensaries to get their updates
+    - can see their reviews of dispensaries and the dispenary replies
+    - user icons, upload custom or use our generic set
 
 Other notes:
   Dispensaries will hold two price sets, one for medical one for recreational
   strain tables can flip to medical prices or recreational prices
   Users that are logged in can  set the default to medical prices
   Let users have friends and message them, sharing strains or what have you.
+  - photography services for dispensaries

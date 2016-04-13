@@ -1,12 +1,12 @@
+<div class="jumbotron jumbotron-fluid">
+  <div id="search-banner" class="container">
+    <h1 class="display-3">Cannabis Strain Search</h1>
+    <p class="lead">Refine your results with filters to search for your preferred cannabis strain</p>
+    <div id="searchBar" class="input-group input-group-lg">
+      <input type="text" class="form-control" placeholder="Blue Dream..." aria-describedby="sizing-addon1">
+    </div>
+  </div>
+</div>
 <div class="container">
-  <div class="button__bar">
-    <button (click)="prevPage()" type="button" class="btn btn-primary btn-lg outline">Previous</button>
-    <button (click)="nextPage()" type="button" class="btn btn-primary btn-lg outline">Next</button>
-  </div>
   <strain-view *ngFor="#strain of strains" [strain]="strain"></strain-view>
-  <div class="button__bar">
-    <button (click)="prevPage()" type="button" class="btn btn-primary btn-lg outline">Previous</button>
-    <button (click)="nextPage()" type="button" class="btn btn-primary btn-lg outline">Next</button>
-  </div>
-
 </div>

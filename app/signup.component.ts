@@ -45,17 +45,13 @@ export class SignUpComponent{
       values.push(form['username']);
       values.push(form['email']);
       values.push(form['password']);
-
       this._dataService.signUp(values).subscribe(function(res){
-        console.log(res);
       });
     } else {
       // THE PASSWORDS DONT MATCH
     }
   }
-
   constructor(private _router: Router, private _dataService: DataService){
-
   }
   onNavigate(){
     this._router.navigate(['AddDispensary']);

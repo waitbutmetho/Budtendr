@@ -7,8 +7,9 @@ var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
 
 @Injectable()
 export class DataService {
+  public user;
+  public isLoading = false;
   constructor(private _http: Http) {
-
   }
   handleError(error: Response) {
     console.error( error );
@@ -46,17 +47,40 @@ export class DataService {
       .do(data => console.log(data));
   }
   login(user, pass) {
-
+    var self = this;
+    var keys = "username password".split(' ');
+    this.postRequest(baseURL+'login.php', this.makeData(keys, [user, pass]))
+      .map(res => res.json())
+      .do(function(res) {
+        if(!res.error) {// user logged in successfully
+          self.user = res.user;
+        }
+      });
   }
   signUp(values) {
     values.push(0);
     var keys = "username email password dispensary_id".split(' ');
-    return this.postRequest('signup.php', this.makeData(keys, values));
+    return this.postRequest('signup.php', this.makeData(keys, values))
+      .map(res => res.json())
+      .do(res => {
+        if(!res.error) {
+          this.localLogin(res.user);
+        }
+      });
+  }
+  localLogin(user) {
+    this.user = user;
+    console.log(this.user);
   }
   addDispensary(values) {
     console.log("Add Disp", values);
     var keys = "name address city state phone email hours bio icon".split(' ');
     return this.postRequest('adddispensary.php', this.makeData(keys, values));
+  }
+  editDispensary(values) {
+    console.log("Edit Disp", values);
+    var keys = "name address city state phone email hours bio icon".split(' ');
+    return this.postRequest('editdispensary.php', this.makeData(keys, values));
   }
   search(term) {
 
