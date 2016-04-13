@@ -62,10 +62,15 @@ export class DataService {
     var keys = "username email password dispensary_id".split(' ');
     return this.postRequest('signup.php', this.makeData(keys, values))
       .map(res => res.json())
-      .do(user => this.localLogin(user));
+      .do(res => {
+        if(!res.error) {
+          this.localLogin(res.user);
+        }
+      });
   }
   localLogin(user) {
     this.user = user;
+    console.log(this.user);
   }
   addDispensary(values) {
     console.log("Add Disp", values);
