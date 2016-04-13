@@ -28,5 +28,9 @@ import {IndexComponent} from './index.component';
   {path: '/all-dispensaries', name: 'AllDispensaries', component: AllDispensariesComponent },
 ])
 export class AppComponent {
+  closeModal() {
+  console.log("close");
+    $('#login-overlay').modal('hide');
+  }
 
 }
