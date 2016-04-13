@@ -16,7 +16,7 @@ export class AddStrainComponent{
     values.push(form['name']);
     values.push(form['thc']);
     values.push(form['cbd']);
-    values.push(form['cgc']? 1:0);
+    values.push((form['cgc'])? 1:0);
     values.push(form['species']);
     values.push(form['rec_price_gram']);
     values.push(form['rec_price_eighth']);
