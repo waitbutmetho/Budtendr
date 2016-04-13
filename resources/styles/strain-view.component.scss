@@ -42,6 +42,9 @@ p {
   .strain-percent {
     display: flex;
     flex-direction: row;
+    .strain-thc, .strain-cbd {
+      margin-right: 10px;
+    }
   }
 }
 

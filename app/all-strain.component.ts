@@ -19,9 +19,11 @@ export class AllStrainComponent implements OnInit{
   ngOnInit() {
 
   }
+
   constructor(private _dataService: DataService) {
     this.getStrains();
   }
+
   getStrains() {
     var self = this;//isolate scope
     this._dataService.getStrains(this.page).subscribe(function(strains){
@@ -60,5 +62,6 @@ export class AllStrainComponent implements OnInit{
     }
 
   }
+
 
 }
