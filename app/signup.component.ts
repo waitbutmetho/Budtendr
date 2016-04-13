@@ -1,7 +1,9 @@
 import { Component } from 'angular2/core';
 import { Router } from 'angular2/router';
+import { DataService } from './data.service';
 
 @Component({
+  providers: [DataService],
     template: `
       <div class="container">
         <form (ngSubmit)="onSubmit(form.value)" #form="ngForm" class="form-horizontal">
@@ -33,10 +35,10 @@ import { Router } from 'angular2/router';
 
 export class SignUpComponent{
   onSubmit(values) {
-    console.log(values);
+    this._dataService.signUp(values);
   }
 
-  constructor(private _router: Router){
+  constructor(private _router: Router, private _dataService: DataService){
 
   }
   onNavigate(){
