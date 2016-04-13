@@ -32,7 +32,7 @@
               <li><a data-toggle="modal" data-target="#login-overlay" href="#">Log In | Sign Up</a></li>
             </ul>
         </div>
-        
+
         <div id="login-overlay"class="modal fade" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -44,15 +44,15 @@
               <div class="row">
                 <div class="col-xs-6">
                   <div class="well">
-                    <form id="loginForm" method="POST" action="login.php" novalidate="novalidate">
+                    <form id="loginForm" (ngSubmit)="login(form.value)" #form="ngForm" novalidate="novalidate">
                       <div class="form-group">
                         <label for="username" class="control-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="username">
+                        <input type="text" ngControl="username" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="username">
                         <span class="help-block"></span>
                       </div>
                       <div class="form-group">
                         <label for="password" class="control-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password" placeholder="password">
+                        <input type="password" ngControl="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password" placeholder="password">
                         <span class="help-block"></span>
                       </div>
                       <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>

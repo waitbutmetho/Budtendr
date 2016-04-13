@@ -6,18 +6,33 @@ import { DataService } from './data.service';
     directives:[StrainViewComponent],
     templateUrl: 'app/templates/all-strain.component.html',
     styleUrls: ['../build/css/all-strain.component.css'],
-
-
 })
-
 export class AllStrainComponent implements OnInit{
   strains = [];
   maxpage = 0;
   page = 0;
-  count= -1;
   pages = [];
+  pageLinks=[];
   ngOnInit() {
-
+    var self = this;
+    $(window).on('scroll', function(e) {
+          var _delayTimer;
+          clearTimeout(_delayTimer);
+          _delayTimer = setTimeout(function () {
+              if ($(window).scrollTop() + $(window).height() > $(document).height()-100) {
+                if(!self._dataService.isLoading) {
+                  self.page++;
+                  self._dataService.isLoading = true;
+                  self._dataService.getStrains(self.page).subscribe(function(res) {
+                    res.strains.forEach(function(strain){
+                      self.strains.push(strain);
+                      self._dataService.isLoading = false;
+                    });
+                  });
+                }
+              }
+          }, 100);
+        });
   }
   constructor(private _dataService: DataService) {
     this.getStrains();
@@ -27,38 +42,6 @@ export class AllStrainComponent implements OnInit{
     this._dataService.getStrains(this.page).subscribe(function(strains){
       self.strains = strains.strains;
       self.maxpage = strains.maxpage;
-      console.log('maxpage is', self.maxpage);
-      self.showPage();
     });
   }
-  nextPage() {
-    this.incrementPage(1);
-  }
-  prevPage() {
-    this.incrementPage(-1);
-  }
-  incrementPage(num) {
-    this.page = this.page + num;
-    if(this.page < 0) this.page = 0;
-    if(this.page > this.maxpage) this.page = this.maxpage;
-    this.getStrains();
-  }
-
-  goToPage(num){
-    this.page = num;
-    this.getStrains();
-  }
-
-  showPage(){
-    while(this.count < this.maxpage) {
-      this.count = this.count += 1;
-      this.pages.push(this.count);//push count into array called pages
-      console.log('var pages', this.pages);
-    }
-    if (this.pages.length > 5) {
-      this.pages
-    }
-
-  }
-
 }

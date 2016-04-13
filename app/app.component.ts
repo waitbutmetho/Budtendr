@@ -34,14 +34,14 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 ])
 export class AppComponent {
 
-  constructor(private _DataService: DataService){
-    this._DataService.getDispensaries()
+  constructor(private _dataService: DataService){
+    this._dataService.getDispensaries()
         .subscribe(dispensaries => console.log(dispensaries));
-
   }
   closeModal() {
     $('#login-overlay').hide;
   }
-
-
+  login(form) {
+    this._dataService.login(form.username, form.password);
+  }
 }
