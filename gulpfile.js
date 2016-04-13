@@ -104,6 +104,7 @@ gulp.task('serve', function() {
       index: "index.html"
     }
   });
+  gulp.watch(['app/templates/*.html'], ['htmlBuild']);
   gulp.watch(['app/*.ts'], ['tsBuild']); // vanilla js changes, reload
   gulp.watch(['bower.json'], ['bowerBuild']);
   gulp.watch(['*.html'], ['htmlBuild']); // html changes, reload
