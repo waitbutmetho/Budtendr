@@ -6,7 +6,7 @@
 }
 .strain-percent{
   border: 1px solid blue;
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
   width: 20%;
 }
@@ -47,12 +47,29 @@
     flex-direction: column;
     justify-content: space-between;
 
+    .strain-name {
+      width: 100%;
+      justify-content: space-around;
+    }
 
+    .strain-disp {
+
+    }
+
+    .strain-percent {
+      width: 100%;
+      justify-content: space-around;
+    }
+    .strain-organic {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .strain-price {
+      width: 100%;
+      justify-content: space-around;
+    }
   }
-  // // .strain-name, {
-  // //   display: flex;
-  // //   flex-direction: row;
-  // //   width: 100%;
-  // }
 
 }
