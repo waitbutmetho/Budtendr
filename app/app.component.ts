@@ -1,4 +1,4 @@
-/// <reference path="../typings/jquery/jquery.d.ts" />
+/// <reference path="../resources/jquery.d.ts" />
 import { Component } from 'angular2/core';
 import {Router, RouteConfig, RouteParams} from 'angular2/router';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
