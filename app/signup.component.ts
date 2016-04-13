@@ -38,7 +38,6 @@ import { DataService } from './data.service';
       </div>
     `,
 })
-
 export class SignUpComponent{
   onSubmit(form) {
     if(form['password'] === form['confirm-password']) {
