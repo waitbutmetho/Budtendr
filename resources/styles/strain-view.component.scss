@@ -23,7 +23,7 @@ p {
 .strain-name {
   display: flex;
   justify-content: space-between;
-  width: 30%;
+  width: 20%;
 
   .strain-name-text {
     display: flex;
@@ -37,8 +37,6 @@ p {
 }
 .strain-group {
   display: flex;
-
-  border: 1px solid black;
   justify-content: space-between;
   width: 20%;
   .strain-percent {
@@ -55,7 +53,7 @@ p {
 
 
 
-@media only screen and (max-width : 780px) {
+@media only screen and (max-width : 992px) {
 
   .strain-header {
     display: flex;
@@ -68,12 +66,10 @@ p {
     }
 
     .strain-percent {
-      border: 1px solid black;
       width: 100%;
       justify-content: space-around;
     }
     .strain-organic {
-      border: 1px solid black;
       width: 100%;
       display: flex;
       flex-direction: column;
