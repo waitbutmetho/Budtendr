@@ -49,6 +49,7 @@ export class DataService {
 
   }
   signUp(values) {
+    values.push(0);
     var keys = "username email password dispensary_id".split(' ');
     return this.postRequest('signup.php', this.makeData(keys, values));
   }

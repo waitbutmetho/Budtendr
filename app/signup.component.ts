@@ -34,8 +34,19 @@ import { DataService } from './data.service';
 })
 
 export class SignUpComponent{
-  onSubmit(values) {
-    this._dataService.signUp(values);
+  onSubmit(form) {
+    if(form['password'] === form['confirm-password']) {
+      var values = [];
+      values.push(form['username']);
+      values.push(form['email']);
+      values.push(form['password']);
+
+      this._dataService.signUp(values).subscribe(function(res){
+        console.log(res);
+      });
+    } else {
+      // THE PASSWORDS DONT MATCH
+    }
   }
 
   constructor(private _router: Router, private _dataService: DataService){
