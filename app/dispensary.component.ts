@@ -1,9 +1,11 @@
 import { Component } from 'angular2/core';
 import { DataService } from './data.service';
 import { RouteParams } from 'angular2/router';
+import {TabContainerComponent} from './tab-container.component';
 
 
 @Component({
+  directives: [TabContainerComponent],
   providers: [DataService],
   templateUrl: 'app/templates/dispensary.component.html',
     styleUrls: ['../build/css/dispensary.component.css'],
