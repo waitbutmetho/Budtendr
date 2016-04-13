@@ -2,8 +2,8 @@ import { Injectable } from 'angular2/core';
 import { Http, Response, Headers } from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
 
-var baseURL = 'http://localhost/budtendr/';
-// var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
+// var baseURL = 'http://localhost/budtendr/';
+var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
 
 @Injectable()
 export class DataService {
@@ -25,9 +25,10 @@ export class DataService {
     return output;
   }
   postRequest(url, data) {
+    console.log('post request', url, data);
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    return this._http.post(baseURL+url, data, { headers: headers})  .do(data => console.log(data));
+    return this._http.post(baseURL+url, data, { headers: headers}).do(data => console.log(data));
   }
   getStrains(page=0) {
     return this._http.get(baseURL + 'strainlist.php?page='+page)
@@ -47,11 +48,15 @@ export class DataService {
   login(user, pass) {
 
   }
-  signUp(user, email, pass) {
-
+  signUp(values) {
+    values.push(0);
+    var keys = "username email password dispensary_id".split(' ');
+    return this.postRequest('signup.php', this.makeData(keys, values));
   }
-  addDispensary(name, address, city, state, phone, email, hours, bio, icon) {
-
+  addDispensary(values) {
+    console.log("Add Disp", values);
+    var keys = "name address city state phone email hours bio icon".split(' ');
+    return this.postRequest('adddispensary.php', this.makeData(keys, values));
   }
   search(term) {
 
