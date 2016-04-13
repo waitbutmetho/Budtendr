@@ -6,7 +6,7 @@
 </div>
 <div class="container">
   <div class="controls">
-    <button type="button" class="btn btn-primary btn-lg outline">Name</button>
+    <button type="button" class="btn btn-primary btn-lg outline" (click)="sortName()" >Name</button>
     <div class="btn-group">
       <button type="button" class="btn btn-primary btn-lg outline">THC</button>
       <button type="button" class="btn btn-primary btn-lg outline">CBD</button>
@@ -23,9 +23,5 @@
   </div>
   <hr>
   <strain-view *ngFor="#strain of strains" [strain]="strain"></strain-view>
-  <div class="button__bar">
-    <button (click)="prevPage()" type="button" class="btn btn-primary btn-lg outline">Previous</button>
-    <p *ngFor="#mypage of pages" (click)="goToPage(mypage)"> {{mypage}}</p>
-    <button (click)="nextPage()" type="button" class="btn btn-primary btn-lg outline">Next</button>
-  </div>
+
 </div>

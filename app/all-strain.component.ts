@@ -29,39 +29,46 @@ export class AllStrainComponent implements OnInit{
     this._dataService.getStrains(this.page).subscribe(function(strains){
       self.strains = strains.strains;
       self.maxpage = strains.maxpage;
-      console.log('maxpage is', self.maxpage);
-      self.showPage();
+      console.log(self.strains);
+      // self.showPage();
     });
   }
-  nextPage() {
-    this.incrementPage(1);
-  }
-  prevPage() {
-    this.incrementPage(-1);
-  }
-  incrementPage(num) {
-    this.page = this.page + num;
-    if(this.page < 0) this.page = 0;
-    if(this.page > this.maxpage) this.page = this.maxpage;
-    this.getStrains();
+
+  sortName(){
+    console.log('sort by name');
+    var self= this;
+    this._dataService.getStrains(this.page).subscribe(function(strains){
+      self.strains = strains.strains;
+      console.log(self.strains);
+    });
   }
 
-  goToPage(num){
-    this.page = num;
-    this.getStrains();
-  }
-
-  showPage(){
-    while(this.count < this.maxpage) {
-      this.count = this.count += 1;
-      this.pages.push(this.count);//push count into array called pages
-      console.log('var pages', this.pages);
-    }
-    if (this.pages.length > 5) {
-      this.pages
-    }
-
-  }
-
-
+  // nextPage() {
+  //   this.incrementPage(1);
+  // }
+  // prevPage() {
+  //   this.incrementPage(-1);
+  // }
+  // incrementPage(num) {
+  //   this.page = this.page + num;
+  //   if(this.page < 0) this.page = 0;
+  //   if(this.page > this.maxpage) this.page = this.maxpage;
+  //   this.getStrains();
+  // }
+  //
+  // goToPage(num){
+  //   this.page = num;
+  //   this.getStrains();
+  // }
+  //
+  // showPage(){
+  //   while(this.count < this.maxpage) {
+  //     this.count = this.count += 1;
+  //     this.pages.push(this.count);//push count into array called pages
+  //
+  //   }
+  //   if (this.pages.length > 5) {
+  //     this.pages
+  //   }
+  // }
 }
