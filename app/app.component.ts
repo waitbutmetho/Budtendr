@@ -40,7 +40,7 @@ export class AppComponent {
 
   }
   closeModal() {
-    $('#login-overlay').modal('hide');
+    $('#login-overlay').hide;
   }
 
 
