@@ -1,6 +1,7 @@
 <div class="container">
   <div class="button__bar">
     <button (click)="prevPage()" type="button" class="btn btn-primary btn-lg outline">Previous</button>
+      <p *ngFor="#mypage of pages"> {{mypage}}</p>
     <button (click)="nextPage()" type="button" class="btn btn-primary btn-lg outline">Next</button>
   </div>
   <strain-view *ngFor="#strain of strains" [strain]="strain"></strain-view>
