@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <img src="{{dispensary.icon}}" alt="{{dispensary.name}} Logo" height="100" width="100">
+    </div>
+    <div class="col-sm-8 text-center">
+      <h1>{{dispensary.name}}</h1>
+      <p>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star-o"></span>
+        <span> 4.00</span>
+        <span> | </span>
+        <span> From 2178 Reviews</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <h4>Address</h4>
+        <span>{{dispensary.address}}</span><br>
+        <span>{{dispensary.city}},</span>
+        <span> {{dispensary.state}}</span>
+      </div>
+      <div class="col-sm-4 text-center">
+        <h4>Phone</h4>
+        <p>{{dispensary.phone}}</p>
+      </div>
+      <div class="col-sm-4 text-center">
+        <h4>Hours</h4>
+        <p>{{dispensary.hours}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <h4 class="text-center margin-bottom-none">About {{dispensary.name}}</h4>
+      <div class="col-sm-12 dispensary-bio">
+        <p>{{dispensary.bio}}</p>
+      </div>
+    </div>
+  </div>
