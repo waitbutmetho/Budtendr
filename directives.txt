@@ -42,6 +42,7 @@ sign up page - WORKING, UNSTYLED
   - users create profiles
   - dispensaries create profiles. Then they submit it to us for review.
 listing strains page - WORKING, HALF-STYLED, ALMOST PAGINATED
+  - Have a header on top of the table that turns into a fixed header as the user scrolls down
   - list all the strains
   - make them sortable
   - pagination
