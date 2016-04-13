@@ -55,6 +55,9 @@ export class AllStrainComponent implements OnInit{
       this.pages.push(this.count);//push count into array called pages
       console.log('var pages', this.pages);
     }
+    if (this.pages.length > 5) {
+      this.pages
+    }
 
   }
 
