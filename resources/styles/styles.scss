@@ -156,8 +156,6 @@ video#bgvid {
   font-weight: bold;
   color: #F1F8E9;
 }
-
-
 #searchBar {
   display: flex;
   align-content: center;
@@ -166,4 +164,7 @@ video#bgvid {
   width: 50%;
   margin-top: 0;
   border-radius: 10px;
+ }
+ .ng-touched.ng-invalid {
+   border: 1px solid red;
  }
