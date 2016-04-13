@@ -42,7 +42,6 @@
     "gulp-util": "^3.0.7",
     "jshint": "^2.9.1",
     "lite-server": "^2.1.0",
-    "tsd": "^0.6.5",
     "typescript": "^1.8.9",
     "typings": "^0.7.9"
   }
