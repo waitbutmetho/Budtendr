@@ -14,7 +14,7 @@ export class AllStrainComponent implements OnInit{
   strains = [];
   maxpage = 0;
   page = 0;
-  count= 0;
+  count= -1;
   pages = [];
   ngOnInit() {
 
@@ -42,11 +42,15 @@ export class AllStrainComponent implements OnInit{
     if(this.page < 0) this.page = 0;
     if(this.page > this.maxpage) this.page = this.maxpage;
     this.getStrains();
-
   }
+
+  goToPage(num){
+    this.page = num;
+    this.getStrains();
+  }
+
   showPage(){
-    while(this.count <= this.maxpage) {
-      console.log('current count', this.count);
+    while(this.count < this.maxpage) {
       this.count = this.count += 1;
       this.pages.push(this.count);//push count into array called pages
       console.log('var pages', this.pages);
