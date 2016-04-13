@@ -1,3 +1,4 @@
+/// <reference path="../typings/jquery/jquery.d.ts" />
 import { Component } from 'angular2/core';
 import {Router, RouteConfig, RouteParams} from 'angular2/router';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
@@ -32,6 +33,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
   {path: '/all-dispensaries', name: 'AllDispensaries', component: AllDispensariesComponent },
 ])
 export class AppComponent {
+
   constructor(private _DataService: DataService){
     this._DataService.getDispensaries()
         .subscribe(dispensaries => console.log(dispensaries));
@@ -40,5 +42,6 @@ export class AppComponent {
   closeModal() {
     $('#login-overlay').modal('hide');
   }
+
 
 }
