@@ -10,11 +10,15 @@ import {AddStrainComponent} from './add-strain.component';
 import {AllStrainComponent} from './all-strain.component';
 import {AllDispensariesComponent} from './all-dispensaries.component';
 import {IndexComponent} from './index.component';
+import {DataService} from './data.service';
+import {HTTP_PROVIDERS} from 'angular2/http';
+
 
 @Component({
   selector: 'my-app',
   templateUrl: 'app/templates/app.component.html',
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES],
+  providers: [DataService, HTTP_PROVIDERS]
 })
 @RouteConfig([
   {path: '/', name: 'Index', component: IndexComponent  },
@@ -28,8 +32,12 @@ import {IndexComponent} from './index.component';
   {path: '/all-dispensaries', name: 'AllDispensaries', component: AllDispensariesComponent },
 ])
 export class AppComponent {
+  constructor(private _DataService: DataService){
+    this._DataService.getDispensaries()
+        .subscribe(dispensaries => console.log(dispensaries));
+
+  }
   closeModal() {
-  console.log("close");
     $('#login-overlay').modal('hide');
   }
 
