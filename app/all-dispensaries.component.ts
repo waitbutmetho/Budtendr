@@ -3,6 +3,7 @@ import { DispensaryViewComponent } from './dispensary-view.component';
 import { DataService } from './data.service';
 
 @Component({
+  selector:"all-dispensaries",
     directives:[DispensaryViewComponent],
     template: `
       <h1>Dispensaries: {{page}}</h1>
