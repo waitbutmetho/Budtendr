@@ -8,11 +8,16 @@
   </div>
 </div>
 <div class="container">
-  <div class="button__bar">
-    <button (click)="prevPage()" type="button" class="btn btn-primary btn-lg outline">Previous</button>
-    <p *ngFor="#mypage of pages" (click)="goToPage(mypage)"> {{mypage}}</p>
-    <button (click)="nextPage()" type="button" class="btn btn-primary btn-lg outline">Next</button>
+  <div class="controls">
+    <div class="filters">
+    </div>
+    <div class="button__bar">
+      <button (click)="prevPage()" type="button" class="btn btn-primary btn-lg outline">Previous</button>
+      <p *ngFor="#mypage of pages" (click)="goToPage(mypage)"> {{mypage}}</p>
+      <button (click)="nextPage()" type="button" class="btn btn-primary btn-lg outline">Next</button>
+    </div>
   </div>
+  <hr>
   <strain-view *ngFor="#strain of strains" [strain]="strain"></strain-view>
   <div class="button__bar">
     <button (click)="prevPage()" type="button" class="btn btn-primary btn-lg outline">Previous</button>
