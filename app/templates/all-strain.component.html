@@ -1,12 +1,12 @@
 <div class="container">
   <div class="button__bar">
-    <a (click)="prevPage()" class="button prev">Previous</a>
-    <a (click)="nextPage()" class="button next">Next</a>
+    <button (click)="prevPage()" type="button" class="btn btn-primary btn-lg outline">Previous</button>
+    <button (click)="nextPage()" type="button" class="btn btn-primary btn-lg outline">Next</button>
   </div>
   <strain-view *ngFor="#strain of strains" [strain]="strain"></strain-view>
   <div class="button__bar">
-    <a (click)="prevPage()" class="button prev">Previous</a>
-    <a (click)="nextPage()" class="button next">Next</a>
+    <button (click)="prevPage()" type="button" class="btn btn-primary btn-lg outline">Previous</button>
+    <button (click)="nextPage()" type="button" class="btn btn-primary btn-lg outline">Next</button>
   </div>
 
 </div>
