@@ -1,4 +1,6 @@
 import { Component, EventEmitter } from 'angular2/core';
+import { Router } from 'angular2/router';
+import { DataService } from './data.service';
 
 @Component({
   inputs: ['strain'],
@@ -8,7 +10,7 @@ import { Component, EventEmitter } from 'angular2/core';
 })
 export class StrainViewComponent{
   emitter: EventEmitter<Object>;
-  constructor() {
+  constructor(private _router: Router, private _dataService: DataService) {
     this.emitter = new EventEmitter<Object>();
   }
   action(data) {
@@ -16,5 +18,8 @@ export class StrainViewComponent{
   }
   onSelect(strain) {
     this.emitter.emit(strain);
+  }
+  onNavigate(){
+    this._router.navigate(['dispensary/:dispensary_id']);
   }
 }
