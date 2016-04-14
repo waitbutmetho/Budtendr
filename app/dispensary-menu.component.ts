@@ -12,6 +12,8 @@ import { RouteParams, Router } from 'angular2/router';
 })
 
 export class DispensaryMenuComponent{
-
+  sort() {
+    
+  }
 
 }

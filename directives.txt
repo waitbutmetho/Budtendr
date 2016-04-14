@@ -8,10 +8,11 @@ navbar shows username instead of login button - DONE
 Menu displaying on dispensary page - DONE
 Manage menu for dispensaries - NIX
 user needs to be able to add a Dispensary - NIX
-search table
-Dispensary list needs to load more on scroll down if available
+search table - DONE
+Dispensary list needs to load more on scroll down if available - DONE
+search sorting
 strainlist - click dispensary name - unhandled
-sorting in dispensary menu 
+sorting in dispensary menu
 
 
 ## Site structure:

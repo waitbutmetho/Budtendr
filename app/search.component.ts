@@ -6,7 +6,8 @@ import { SearchResultsComponent } from './search-results.component';
 @Component({
   providers: [DataService],
   directives: [SearchResultsComponent],
-  template: `<h1>SERCCH</h1>
+  template: `
+    <search-results *ngFor="#dispensary of results" [dispensary]="dispensary"></search-results>
   `,
 })
 export class SearchComponent{
@@ -16,7 +17,7 @@ export class SearchComponent{
     var self = this;
     this._dataService.search(params.get('term')).subscribe(function(res) {
       console.log(res);
-      // self.results = res;
+      self.results = res;
     });
   }
 }

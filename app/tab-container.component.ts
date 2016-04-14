@@ -10,8 +10,8 @@ import {DispensaryMenuComponent} from './dispensary-menu.component';
   selector: 'tab-container',
   template: `
     <tabs>
-      <tab [tabName]="'Menu'"><dispensary-menu></dispensary-menu></tab>
-      <tab [tabName]="'Details'"><dispensary-details></dispensary-details></tab>
+      <tab [tabName]="'Menu'"><dispensary-menu [strains]="strains"></dispensary-menu></tab>
+      <tab [tabName]="'Map'"><dispensary-details [map]="map"></dispensary-details></tab>
     </tabs>
   `,
   directives: [TabsComponent, TabComponent, DispensaryDetailsComponent, DispensaryMenuComponent]
