@@ -1,6 +1,6 @@
 <button (click)="editUserForm()">Edit User</button>
-<h1>{{loginname}}'s Profile Page</h1>
-<span>Your email: {{loginemail}}</span>
+<h1>{{user.username}}'s Profile Page</h1>
+<span>Your email: {{user.email}}</span>
 <div *ngIf="dispensary_id>0">
   <a href="/#/dispensaryAdmin/{{dispensary_id}}">Manage Your Dispensary</a>
 </div>

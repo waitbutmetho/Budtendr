@@ -7,18 +7,18 @@ import { RouteParams, Router } from 'angular2/router';
   templateUrl: "app/templates/user.component.html" ,
 })
 export class UserComponent{
-  loginname = 'username';
-  loginemail = 'email@email.com';
+  user;
   dispensary_id = 0;
   constructor(private _router: Router, private _dataService: DataService) {
     console.log("User Comp. Logged in: ", this._dataService.loggedIn());
     if(this._dataService.loggedIn()) {
-      var user = this._dataService.getUser();
-      this.loginname = user.username;
-      this.loginemail = user.email;
-      this.dispensary_id = user.dispensary_id;
-      console.log(user, this);
-      console.log("username", this.loginname);
+      this.user =this._dataService.getUser();
+      // var user =
+      // this.loginname = user.username;
+      // this.loginemail = user.email;
+      // this.dispensary_id = user.dispensary_id;
+      // console.log(user, this);
+      // console.log("username", this.loginname);
     } else {
       this._router.navigate(['Index']);
       $('#login-overlay').modal('show');

@@ -13,7 +13,13 @@ export class SignUpComponent{
       values.push(form['username']);
       values.push(form['email']);
       values.push(form['password']);
+      var self = this;
       this._dataService.signUp(values).subscribe(function(res){
+        if(!res.error) {
+          self._router.navigate(['User']);
+        } else {
+          console.log("Signup", res.errormsg);
+        }
       });
     } else {
       // THE PASSWORDS DONT MATCH
