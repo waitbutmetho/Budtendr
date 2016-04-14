@@ -20,6 +20,7 @@ import { EditStrainComponent } from './edit-strain.component';
 @Component({
   selector: 'my-app',
   templateUrl: 'app/templates/app.component.html',
+  styleUrls: ['../build/css/app.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [DataService, HTTP_PROVIDERS]
 })
@@ -40,8 +41,7 @@ export class AppComponent {
   user;
   constructor(private _dataService: DataService, private _router: Router){
     console.log(this._dataService);
-    this._dataService.getDispensaries()
-        .subscribe(dispensaries => console.log(dispensaries));
+    this.user = this._dataService.getUser();
   }
   closeModal() {
     $('#login-overlay').modal('hide');
@@ -49,9 +49,13 @@ export class AppComponent {
   login(form) {
     var self = this;
     this._dataService.login(form.username, form.password).subscribe(function(res) {
-      self.user = res.user;
-      self._router.navigate(['User']);
-      $('#login-overlay').modal('hide');
+      if(!res.error) {
+        self.user = res.user;
+        self._router.navigate(['User']);
+        $('#login-overlay').modal('hide');
+      } else {
+        console.log("AppCmp", "User not found");
+      }
     });
   }
 }

@@ -2,8 +2,8 @@ import { Injectable } from 'angular2/core';
 import { Http, Response, Headers } from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
 
-// var baseURL = 'http://localhost/budtendr/';
-var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
+var baseURL = 'http://localhost/budtendr/';
+// var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
 
 var user;
 var loggedIn = false;
@@ -17,7 +17,13 @@ export class DataService {
     var error = false;
     try {
       console.log("MapHandler Trying", res);
-      return res.json();
+      res = res.json();
+      if(!res.error) {
+        return res;
+      } else {
+        console.log(res.errormsg);
+      }
+
     } catch(e) {
       error = true;
     }
@@ -67,8 +73,9 @@ export class DataService {
       return this.postRequest('login.php', this.makeData(keys, values))
         .map(this.mapHandler)
         .do(function(data) {
-          self.localLogin(data.user);
-          console.log("login resp", data);
+          if(!data.error) {
+            self.localLogin(data.user);
+          }
         });
     }
   }
@@ -85,7 +92,11 @@ export class DataService {
     var keys = "username email password dispensary_id".split(' ');
     return this.postRequest('signup.php', this.makeData(keys, values))
       .map(this.mapHandler)
-      .do(res => this.localLogin(res.user));
+      .do(res => {
+        if(!res.error) {
+          this.localLogin(res.user);
+        }
+      });
   }
   getIsLoading() {
     return isLoading;

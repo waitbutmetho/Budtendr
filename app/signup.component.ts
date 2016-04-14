@@ -4,7 +4,8 @@ import { DataService } from './data.service';
 
 @Component({
   providers: [DataService],
-    templateUrl: "app/templates/signup.component.html" ,
+    templateUrl: "app/templates/signup.component.html",
+    styleUrls: ['../build/css/sign-up.component.css'],
 })
 export class SignUpComponent{
   onSubmit(form) {
@@ -13,7 +14,13 @@ export class SignUpComponent{
       values.push(form['username']);
       values.push(form['email']);
       values.push(form['password']);
+      var self = this;
       this._dataService.signUp(values).subscribe(function(res){
+        if(!res.error) {
+          self._router.navigate(['User']);
+        } else {
+          console.log("Signup", res.errormsg);
+        }
       });
     } else {
       // THE PASSWORDS DONT MATCH

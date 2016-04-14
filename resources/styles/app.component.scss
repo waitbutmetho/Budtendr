@@ -1,0 +1,17 @@
+.navbar-header a, {
+  font-weight: bolder;
+  color: white;
+}
+
+.icon-bar {
+
+  background-color: white;
+}
+
+
+
+.nav > li > a:hover, .nav > li > a:focus, .nav > li > a {
+    text-decoration: none;
+    color: white;
+    background-color: transparent !important;
+}
