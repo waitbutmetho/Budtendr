@@ -31,7 +31,7 @@
             </ul>
             <div *ngIf="_dataService.loggedIn() === true">
               <ul class="nav navbar-nav navbar-right">
-                <li><a [routerLink]="['User']">{{user.username}}</a></li>
+                <li><a>{{user.username}}</a></li>
               </ul>
             </div>
             <div *ngIf="_dataService.loggedIn() === false">
@@ -97,7 +97,6 @@
 
       <ul>
         <li><a [routerLink]="['Search']">Search</a></li>
-        <li><a [routerLink]="['User']"> User</a></li>
         <li><a [routerLink]="['SignUp']">Sign Up</a></li>
         <li><a [routerLink]="['AddDispensary']">Add Dispensary</a></li>
         <li><a [routerLink]="['AddStrain']">Add Strain</a></li>
