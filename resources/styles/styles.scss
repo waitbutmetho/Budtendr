@@ -1,18 +1,7 @@
-form {
-  width: 50%;
-  margin:auto;
-}
-label {
-  width:25%;
-}
-label, input {
-  display: inline-block;
-}
-input {
-  width: 75%;
-}
-input[type=submit] {
-  width:100%;
+.landing-text {
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
 }
 
 #searchBar {
@@ -53,7 +42,6 @@ input[type=submit] {
     background-size: cover;
   }
 
-//video max height: 100vh, width 100% opacity, margin-bototm.
 
 video {
     position: absolute;;
@@ -91,6 +79,15 @@ video {
   font-weight: bold;
   color: #F1F8E9;
 }
+
+.sub-headline {
+  display: flex;
+  justify-content: center;
+  font-size: 1.75em;
+  font-weight: bold;
+  color: #F1F8E9;
+}
+
 #searchBar {
   display: flex;
   align-content: center;
