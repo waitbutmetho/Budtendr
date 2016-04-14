@@ -20,6 +20,7 @@ import { EditStrainComponent } from './edit-strain.component';
 @Component({
   selector: 'my-app',
   templateUrl: 'app/templates/app.component.html',
+  styleUrls: ['../build/css/app.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [DataService, HTTP_PROVIDERS]
 })
