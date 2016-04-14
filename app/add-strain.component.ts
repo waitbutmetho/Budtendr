@@ -4,6 +4,7 @@ import { DataService } from './data.service';
 @Component({
   providers: [DataService],
   templateUrl: 'app/templates/add-strain.component.html',
+  styleUrls: ['../build/css/add-strain.component.css'],
 })
 export class AddStrainComponent{
   constructor(private _dataService: DataService){}

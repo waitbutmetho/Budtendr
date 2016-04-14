@@ -4,6 +4,7 @@ import { DataService } from './data.service';
 @Component({
   providers: [DataService],
     templateUrl: 'app/templates/add-dispensary.component.html',
+    styleUrls: ['../build/css/add-dispensary.component.css'],
 
 })
 
