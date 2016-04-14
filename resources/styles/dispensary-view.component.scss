@@ -1,0 +1,28 @@
+
+
+
+@media only screen and (max-width : 768px) {
+
+  .all-disp {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .row1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;;
+      align-items: flex-end;
+      width: 100%;
+    }
+    .group2-3 {
+      display: flex;
+      justify-content: space-between;;
+    }
+    .row3 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+}
