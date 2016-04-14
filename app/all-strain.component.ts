@@ -1,3 +1,5 @@
+/// <reference path="../resources/jquery/jquery.d.ts" />
+/// <reference path="../resources/jquery/jquery.simplemodal.d.ts" />
 import { Component, OnInit } from 'angular2/core';
 import { StrainViewComponent } from './strain-view.component';
 import { DataService } from './data.service';
