@@ -95,4 +95,8 @@ export class DataService {
   updateUser() {
 
   }
+
+  getStrainsForDispensary() {
+    
+  }
 }
