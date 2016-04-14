@@ -11,6 +11,7 @@ import { TabContainerComponent } from './tab-container.component';
 })
 export class DispensaryComponent{
   dispensary = [];
+  strains = [];
   constructor(private _router: Router, params: RouteParams, private _dataService: DataService) {
     this.getDispensary(params.get('id'));
   }
@@ -19,6 +20,7 @@ export class DispensaryComponent{
       if( resp.status == undefined ) {
         var res = <any>resp;
         this.dispensary = res.dispensary;
+        this.strains = res.strains;
         console.log(resp);
       } else {
         this._router.navigate(['Index']);

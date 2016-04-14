@@ -8,10 +8,11 @@ import {DispensaryReviewsComponent} from './dispensary-reviews.component';
 import {DispensaryUpdatesComponent} from './dispensary-updates.component';
 
 @Component({
+  inputs: ["strains"],
   selector: 'tab-container',
   template: `
   <tabs>
-        <tab [tabName]="'Menu'"><dispensary-menu></dispensary-menu></tab>
+        <tab [tabName]="'Menu'"><dispensary-menu [strains]="strains"></dispensary-menu></tab>
         <tab [tabName]="'Updates'"><dispensary-updates></dispensary-updates></tab>
         <tab [tabName]="'Details'"><dispensary-details></dispensary-details></tab>
         <tab [tabName]="'Reviews'"><dispensary-reviews></dispensary-reviews></tab>

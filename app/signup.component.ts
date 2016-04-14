@@ -4,7 +4,7 @@ import { DataService } from './data.service';
 
 @Component({
   providers: [DataService],
-    templateUrl: "app/templates/signup.component.html" ,
+    templateUrl: "app/templates/signup.component.html",
     styleUrls: ['../build/css/sign-up.component.css'],
 })
 export class SignUpComponent{
