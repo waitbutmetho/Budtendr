@@ -1,6 +1,6 @@
 import { Component } from 'angular2/core';
 import { DataService } from './data.service';
-import { RouteParams } from 'angular2/router';
+import { RouteParams, Router } from 'angular2/router';
 
 
 @Component({
@@ -10,19 +10,15 @@ import { RouteParams } from 'angular2/router';
 
 export class DispensaryAdminComponent{
 dispensary = [];
-  constructor(params: RouteParams, private _dataService: DataService) {
+  constructor(params: RouteParams, private _dataService: DataService, private _router: Router) {
     this.getDispensary(params.get('id'));
   }
-
   getDispensary(id) {
     this._dataService.getDispensary(id).subscribe(resp => this.dispensary = resp.dispensary);
   }
-  editDispForm() {
-    console.log('showform');
-    $('#dispForm').toggle();
-  }
   onSubmit(form) {
     var values = [];
+    values.push(this.dispensary['id']);
     values.push(form['name']);
     values.push(form['address']);
     values.push(form['city']);
@@ -32,8 +28,9 @@ dispensary = [];
     values.push(form['hours']);
     values.push(form['bio']);
     values.push(form['icon']);
+    var self = this;
     this._dataService.editDispensary(values).subscribe(function(res){
-      console.log(res);
+      self._router.navigate(['Dispensary', { id: self.dispensary['id'] }]);
     });
   }
 }

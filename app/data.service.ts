@@ -97,7 +97,7 @@ export class DataService {
   }
   editDispensary(values) {
     console.log("Edit Disp", values);
-    var keys = "name address city state phone email hours bio icon".split(' ');
+    var keys = "id name address city state phone email hours bio icon".split(' ');
     return this.postRequest('editdispensary.php', this.makeData(keys, values));
   }
   search(term) {
