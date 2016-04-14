@@ -45,6 +45,9 @@ export class AppComponent {
     $('#login-overlay').modal('hide');
   }
   login(form) {
-    this._dataService.login(form.username, form.password);
+    var self = this;
+    this._dataService.login(form.username, form.password).subscribe(function(res) {
+      
+    });
   }
 }
