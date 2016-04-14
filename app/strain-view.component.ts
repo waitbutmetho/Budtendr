@@ -1,4 +1,7 @@
 import { Component } from 'angular2/core';
+import { Router } from 'angular2/router';
+import { DataService } from './data.service';
+
 
 @Component({
   inputs: ['strain'],
@@ -9,5 +12,11 @@ import { Component } from 'angular2/core';
 export class StrainViewComponent{
   action(data) {
     console.log(data);
+  }
+  constructor(private _router: Router, private _dataService: DataService){
+  }
+
+  onNavigate(){
+    this._router.navigate(['dispensary/:dispensary_id']);
   }
 }

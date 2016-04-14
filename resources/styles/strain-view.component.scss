@@ -15,6 +15,15 @@ p {
   }
 }
 
+.strain-disp:hover {
+  cursor: pointer;
+  color: #777;
+}
+.strain-disp:active {
+  cursor: pointer;
+  color: #555;
+}
+
 .row1 {
   width: 40%;
   display: flex;
