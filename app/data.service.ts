@@ -13,9 +13,18 @@ var isLoading = false;
 export class DataService {
   constructor(private _http: Http) {
   }
-  handleError(error: Response) {
-    console.error( error );
-    return Observable.throw(error.json().error || "Server Error");
+  mapHandler(res) {
+    var error = false;
+    try {
+      console.log("MapHandler Trying", res);
+      return res.json();
+    } catch(e) {
+      error = true;
+    }
+    if(error) {
+      console.log("error", res);
+    }
+    return res;
   }
   makeData(keys, values) {
     var output = "";
@@ -37,18 +46,18 @@ export class DataService {
     var url = baseURL + 'strainlist.php?page='+page+"&sortby="+sortby+"&sortdir="+sortdir;
     console.log(url);
     return this._http.get(url)
-      .map(res => res.json())
+      .map(this.mapHandler)
       .do(data => console.log(data));
   }
   getDispensaries(page=0) {
     return this._http.get(baseURL+'dispensarylist.php?page='+page)
-      .map(res => res.json())
+      .map(this.mapHandler)
       .do(data => console.log(data));
   }
   getDispensary(id) {
     return this._http.get(baseURL+'dispensary.php?id='+id)
-      .map(res => res.json())
-      .do(data => console.log(data));
+      .map(this.mapHandler)
+      .do(data => console.log(data))
   }
   login(user, pass) {
     var self = this;
@@ -56,7 +65,7 @@ export class DataService {
     var values = [user, pass];
     if(true) {
       return this.postRequest('login.php', this.makeData(keys, values))
-        .map(res => res.json())
+        .map(this.mapHandler)
         .do(function(data) {
           self.localLogin(data.user);
           console.log("login resp", data);
@@ -75,7 +84,7 @@ export class DataService {
     values.push(0);
     var keys = "username email password dispensary_id".split(' ');
     return this.postRequest('signup.php', this.makeData(keys, values))
-      .map(res => res.json())
+      .map(this.mapHandler)
       .do(res => this.localLogin(res.user));
   }
   getIsLoading() {

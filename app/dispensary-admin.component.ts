@@ -11,10 +11,26 @@ import { RouteParams, Router } from 'angular2/router';
 export class DispensaryAdminComponent{
 dispensary = [];
   constructor(params: RouteParams, private _dataService: DataService, private _router: Router) {
-    this.getDispensary(params.get('id'));
+    if(this._dataService.loggedIn() && this._dataService.getUser().dispensary_id == params.get('id')) {
+      this.getDispensary(params.get('id'));
+    } else {
+      if(parseInt(params.get('id')) > 0) {
+        this._router.navigate(['Dispensary', { id: params.get('id')}]);
+      } else {
+        this._router.navigate(['Index']);
+      }
+    }
   }
   getDispensary(id) {
-    this._dataService.getDispensary(id).subscribe(resp => this.dispensary = resp.dispensary);
+    this._dataService.getDispensary(id).subscribe(resp => {
+      if( resp.status == undefined ) {
+        var res = <any>resp;
+        this.dispensary = res.dispensary;
+        console.log(resp);
+      } else {
+        this._router.navigate(['Index']);
+      }
+    });
   }
   onSubmit(form) {
     var values = [];

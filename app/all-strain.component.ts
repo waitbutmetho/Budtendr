@@ -3,6 +3,7 @@
 import { Component, OnInit } from 'angular2/core';
 import { StrainViewComponent } from './strain-view.component';
 import { DataService } from './data.service';
+import { RouteParams, Router } from 'angular2/router';
 
 @Component({
     directives:[StrainViewComponent],
@@ -27,11 +28,18 @@ export class AllStrainComponent implements OnInit{
                 if(!self._dataService.getIsLoading()) {
                   self.page++;
                   self._dataService.setIsLoading(true);
-                  self._dataService.getStrains(self.page).subscribe(function(res) {
-                    res.strains.forEach(function(strain){
-                      self.strains.push(strain);
-                      self._dataService.setIsLoading(false);
-                    });
+                  self._dataService.getStrains(self.page).subscribe(function(resp) {
+                    if( resp.status == undefined ) {
+                      var res = <any>resp;
+                      res.strains.forEach(function(strain){
+                        self.strains.push(strain);
+                        self._dataService.setIsLoading(false);
+                      });
+                      console.log(resp);
+                    } else {
+                      self._router.navigate(['Index']);
+                    }
+
                   });
                 }
               }
@@ -39,15 +47,21 @@ export class AllStrainComponent implements OnInit{
         });
   }
 
-  constructor(private _dataService: DataService) {
+  constructor(private _dataService: DataService, private _router: Router) {
     this.getStrains();
   }
 
   getStrains() {
     var self = this;//isolate scope
-    this._dataService.getStrains(this.page, this.sortBy, this.sortDir).subscribe(function(strains){
-      self.strains = strains.strains;
-      self.maxpage = strains.maxpage;
+    this._dataService.getStrains(this.page, this.sortBy, this.sortDir).subscribe(function(resp){
+      if( resp.status == undefined ) {
+        var strains = <any>resp;
+        self.strains = strains.strains;
+        self.maxpage = strains.maxpage;
+        console.log(resp);
+      } else {
+        self._router.navigate(['Index']);
+      }
     });
   }
   sort(sortby) {

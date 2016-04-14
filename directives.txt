@@ -1,7 +1,17 @@
 
-Todo:
+Todo FUNCITONALITY:
 Error handling
-  everywhere in service
+  everywhere in service DONE
+dispensary table - DONE
+dispensary admin check for login and admin id - DONE
+navbar shows username instead of login button - Update pending mikes computer updates
+Menu displaying on dispensary page
+Manage menu for dispensaries
+search table
+Dispensary list needs to load more on scroll down if available
+user needs to be able to add a Dispensary
+
+
 
 ## Site structure:
 

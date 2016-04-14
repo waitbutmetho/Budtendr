@@ -3,14 +3,11 @@ import { DataService } from './data.service';
 
 @Component({
   providers: [DataService],
-    templateUrl: 'app/templates/add-strain.component.html',
-
+  templateUrl: 'app/templates/add-strain.component.html',
 })
-
 export class AddStrainComponent{
   constructor(private _dataService: DataService){}
   onSubmit(form) {
-    console.log(form);
     var values=[];
     values.push(63);
     values.push(form['name']);
@@ -28,7 +25,6 @@ export class AddStrainComponent{
     values.push(form['med_price_quarter']);
     values.push(form['med_price_half']);
     values.push(form['med_price_ounce']);
-    console.log(values);
     this._dataService.addStrain(values).subscribe(function(re){
       console.log(re);
     });
