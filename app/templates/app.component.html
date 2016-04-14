@@ -29,10 +29,17 @@
                 <li><a [routerLink]="['AllStrain']">All Strains</a></li>
                 <li><a [routerLink]="['AllDispensaries']">All Dispensaries</a></li>
             </ul>
-            
-            <ul class="nav navbar-nav navbar-right">
-              <li><a data-toggle="modal" data-target="#login-overlay" href="#">Log In | Sign Up</a></li>
-            </ul>
+            <div *ngIf="_dataService.loggedIn() === true">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a [routerLink]="['User']">{{user.username}}</a></li>
+              </ul>
+            </div>
+            <div *ngIf="_dataService.loggedIn() === false">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a data-toggle="modal" data-target="#login-overlay" href="#">Log In | Sign Up</a></li>
+              </ul>
+            </div>
+
         </div>
 
         <div id="login-overlay"class="modal fade" role="dialog">

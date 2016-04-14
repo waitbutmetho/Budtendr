@@ -36,6 +36,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
   {path: '/all-dispensaries', name: 'AllDispensaries', component: AllDispensariesComponent },
 ])
 export class AppComponent {
+  user;
   constructor(private _dataService: DataService, private _router: Router){
     console.log(this._dataService);
     this._dataService.getDispensaries()
@@ -47,6 +48,7 @@ export class AppComponent {
   login(form) {
     var self = this;
     this._dataService.login(form.username, form.password).subscribe(function(res) {
+      self.user = res.user;
       self._router.navigate(['User']);
       $('#login-overlay').modal('hide');
     });
