@@ -15,6 +15,8 @@ export class AllStrainComponent implements OnInit{
   page = 0;
   pages = [];
   pageLinks=[];
+  sortDir = "asc";
+  sortBy = "name";
   ngOnInit() {
     var self = this;
     $(window).on('scroll', function(e) {
@@ -43,20 +45,21 @@ export class AllStrainComponent implements OnInit{
 
   getStrains() {
     var self = this;//isolate scope
-    this._dataService.getStrains(this.page).subscribe(function(strains){
+    this._dataService.getStrains(this.page, this.sortBy, this.sortDir).subscribe(function(strains){
       self.strains = strains.strains;
       self.maxpage = strains.maxpage;
-      console.log(self.strains);
-      // self.showPage();
+
     });
   }
-
-  sortName(){
-    console.log('sort by name');
-    var self= this;
-    this._dataService.getStrains(this.page).subscribe(function(strains){
-      self.strains = strains.strains;
-      console.log(self.strains);
-    });
+  sort(sortby) {
+    if(this.sortBy == sortby) {
+      if(this.sortDir === "asc") {
+        this.sortDir = "desc";
+      } else {
+        this.sortDir = "asc";
+      }
+    }
+    this.sortBy = sortby;
+    this.getStrains();
   }
 }
