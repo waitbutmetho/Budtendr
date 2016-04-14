@@ -70,8 +70,15 @@ video {
 
 
 .featurette {
-  margin-top: 75vh;
+  margin-top: 45vh;
 }
+
+#featurette-info3, #featurette-info2, #featurette-info1 {
+  padding-top: 20vh;
+}
+
+
+
 .headline {
   display: flex;
   align-content: center;
