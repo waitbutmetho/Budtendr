@@ -168,3 +168,13 @@ video#bgvid {
  .ng-touched.ng-invalid {
    border: 1px solid red;
  }
+ #usernameLogin{
+   display: flex;
+   margin-left: -50px;
+   width: 200%;
+ }
+ #passwordLogin{
+   display: flex;
+   margin-left: -50px;
+   width: 200%;
+ }
