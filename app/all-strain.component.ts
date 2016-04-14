@@ -50,13 +50,4 @@ export class AllStrainComponent implements OnInit{
       // self.showPage();
     });
   }
-
-  sortName(){
-    console.log('sort by name');
-    var self= this;
-    this._dataService.getStrains(this.page).subscribe(function(strains){
-      self.strains = strains.strains;
-      console.log(self.strains);
-    });
-  }
 }
