@@ -1,3 +1,5 @@
+/// <reference path="../resources/jquery/jquery.d.ts" />
+/// <reference path="../resources/jquery/jquery.simplemodal.d.ts" />
 import { Component, OnInit } from 'angular2/core';
 import { StrainViewComponent } from './strain-view.component';
 import { DataService } from './data.service';
@@ -13,6 +15,8 @@ export class AllStrainComponent implements OnInit{
   page = 0;
   pages = [];
   pageLinks=[];
+  sortDir = "asc";
+  sortBy = "name";
   ngOnInit() {
     var self = this;
     $(window).on('scroll', function(e) {
@@ -34,14 +38,27 @@ export class AllStrainComponent implements OnInit{
           }, 100);
         });
   }
+
   constructor(private _dataService: DataService) {
     this.getStrains();
   }
+
   getStrains() {
     var self = this;//isolate scope
-    this._dataService.getStrains(this.page).subscribe(function(strains){
+    this._dataService.getStrains(this.page, this.sortBy, this.sortDir).subscribe(function(strains){
       self.strains = strains.strains;
       self.maxpage = strains.maxpage;
     });
+  }
+  sort(sortby) {
+    if(this.sortBy == sortby) {
+      if(this.sortDir === "asc") {
+        this.sortDir = "desc";
+      } else {
+        this.sortDir = "asc";
+      }
+    }
+    this.sortBy = sortby;
+    this.getStrains();
   }
 }
