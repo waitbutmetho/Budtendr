@@ -1,4 +1,8 @@
 
+Todo:
+Error handling
+  everywhere in service
+
 ## Site structure:
 
 Coder Projects:
