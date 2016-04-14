@@ -46,8 +46,6 @@ export class AppComponent {
   }
   login(form) {
     var self = this;
-    this._dataService.login(form.username, form.password).subscribe(function(res) {
-      
-    });
+    this._dataService.login(form.username, form.password);
   }
 }
