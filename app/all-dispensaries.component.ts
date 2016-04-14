@@ -6,10 +6,20 @@ import { DataService } from './data.service';
   selector:"all-dispensaries",
     directives:[DispensaryViewComponent],
     template: `
-
-      <button (click)="nextPage()">Next Page</button><button (click)="prevPage()">Prev Page</button>
+    <div class="jumbotron jumbotron-fluid">
+      <div id="disp-banner" class="container">
+        <h1 class="display-3">Dispensary List</h1>
+        <p class="lead">Browse dispensaries to find your next strain</p>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="btn btn-primary btn-md outline"(click)="nextPage()">Next Page</button>
+      <button class="btn btn-primary btn-md outline" (click)="prevPage()">Prev Page</button>
+    </div>
+      <br><br>
       <dispensary-view *ngFor="#dispensary of dispensaries" [dispensary]="dispensary"></dispensary-view>
     `,
+    styleUrls: ['../build/css/all-dispensaries.component.css'],
 
 })
 
