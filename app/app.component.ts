@@ -1,4 +1,5 @@
-/// <reference path="../resources/jquery.d.ts" />
+/// <reference path="../resources/jquery/jquery.d.ts" />
+/// <reference path="../resources/jquery/jquery.simplemodal.d.ts" />
 import { Component } from 'angular2/core';
 import {Router, RouteConfig, RouteParams} from 'angular2/router';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
@@ -39,7 +40,7 @@ export class AppComponent {
         .subscribe(dispensaries => console.log(dispensaries));
   }
   closeModal() {
-    $('#login-overlay').hide;
+    $('#login-overlay').modal('hide');
   }
   login(form) {
     this._dataService.login(form.username, form.password);

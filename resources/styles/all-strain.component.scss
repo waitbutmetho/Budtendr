@@ -1,5 +1,20 @@
-.strain__view {
+body {
+  background-color: F1F8E9;
+}
 
+#search-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.jumbotron {
+  background-color: #689F38;
+}
+.jumbotron h1 {
+  color: #F1F8E9;
+}
+.jumbotron p {
+  color: #DCEDC8;
 }
 
 .button__bar {
