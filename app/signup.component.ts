@@ -11,13 +11,16 @@ import { DataService } from './data.service';
           <div class="form-group">
             <label class="control-label col-sm-2" for="username">Username</label>
             <div class="col-sm-10">
-                  <input ngControl="username" #username="ngForm" type="text" class="form-control" id="username">
+                  <input ngControl="username" #username="ngForm" type="text" class="form-control" id="username" required>
+                  <div class="alert alert-danger" *ngIf=" username.touched && !username.valid">Username is required.</div>
+
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="email">Email</label>
             <div class="col-sm-10">
-                  <input ngControl="email" #email="ngForm" type="text" class="form-control" id="email">
+                  <input ngControl="email" #email="ngForm" type="text" class="form-control" id="email" required>
+                  <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
             </div>
           </div>
           <div class="form-group">

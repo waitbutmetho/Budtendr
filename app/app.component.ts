@@ -5,6 +5,7 @@ import {Router, RouteConfig, RouteParams} from 'angular2/router';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {SearchComponent} from './search.component';
 import {DispensaryComponent} from './dispensary.component';
+import {DispensaryAdminComponent} from './dispensary-admin.component';
 import {UserComponent} from './user.component';
 import {SignUpComponent} from './signup.component';
 import {AddDispensaryComponent} from './add-dispensary.component';
@@ -26,6 +27,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
   {path: '/', name: 'Index', component: IndexComponent  },
   {path: '/search', name: 'Search', component: SearchComponent  },
   {path: '/dispensary/:id', name: 'Dispensary', component: DispensaryComponent },
+  {path: '/dispensaryAdmin/:id', name: 'DispensaryAdmin', component: DispensaryAdminComponent},
   {path: '/user', name: 'User', component: UserComponent },
   {path: '/sign-up', name: 'SignUp', component: SignUpComponent },
   {path: '/add-dispensary', name: 'AddDispensary', component: AddDispensaryComponent },
