@@ -38,9 +38,11 @@ export class AllStrainComponent implements OnInit{
           }, 100);
         });
   }
+
   constructor(private _dataService: DataService) {
     this.getStrains();
   }
+
   getStrains() {
     var self = this;//isolate scope
     this._dataService.getStrains(this.page, this.sortBy, this.sortDir).subscribe(function(strains){
@@ -49,6 +51,13 @@ export class AllStrainComponent implements OnInit{
     });
   }
   sort(sortby) {
+    if(this.sortBy == sortby) {
+      if(this.sortDir === "asc") {
+        this.sortDir = "desc";
+      } else {
+        this.sortDir = "asc";
+      }
+    }
     this.sortBy = sortby;
     this.getStrains();
   }

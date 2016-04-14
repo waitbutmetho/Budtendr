@@ -1,12 +1,27 @@
 <div class="jumbotron jumbotron-fluid">
   <div id="search-banner" class="container">
     <h1 class="display-3">Cannabis Strain Search</h1>
-    <p class="lead">Refine your results with filters to search for your preferred cannabis strain</p>
-    <div id="searchBar" class="input-group input-group-lg">
-      <input type="text" class="form-control" placeholder="Blue Dream..." aria-describedby="sizing-addon1">
-    </div>
+    <p class="lead">Refine your results with filters to find for your preferred cannabis strain</p>
   </div>
 </div>
 <div class="container">
+  <div class="controls">
+    <button type="button" (click)="sort('name')" class="btn btn-primary btn-lg outline">Name</button>
+    <div class="btn-group">
+      <button type="button" (click)="sort()" class="btn btn-primary btn-lg outline">THC</button>
+      <button type="button" (click)="sort()" class="btn btn-primary btn-lg outline">CBD</button>
+    </div>
+    <button type="button" (click)="sort()" class="btn btn-primary btn-lg outline">dispensary</button>
+
+    <div class="btn-group">
+      <button type="button" (click)="sort()" class="btn btn-primary btn-lg outline">Gram</button>
+      <button type="button" (click)="sort()" class="btn btn-primary btn-lg outline">1/8</button>
+      <button type="button" (click)="sort()" class="btn btn-primary btn-lg outline">1/4</button>
+      <button type="button" (click)="sort()" class="btn btn-primary btn-lg outline">1/2</button>
+      <button type="button" (click)="sort()" class="btn btn-primary btn-lg outline">Ounce</button>
+    </div>
+  </div>
+  <hr>
   <strain-view *ngFor="#strain of strains" [strain]="strain"></strain-view>
+
 </div>
