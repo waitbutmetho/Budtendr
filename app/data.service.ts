@@ -51,7 +51,7 @@ export class DataService {
   }
   getDispensaries(page=0) {
     return this._http.get(baseURL+'dispensarylist.php?page='+page)
-      .map(res => res.json())
+      .map(this.mapHandler)
       .do(data => console.log(data));
   }
   getDispensary(id) {
@@ -65,7 +65,7 @@ export class DataService {
     var values = [user, pass];
     if(true) {
       return this.postRequest('login.php', this.makeData(keys, values))
-        .map(res => res.json())
+        .map(this.mapHandler)
         .do(function(data) {
           self.localLogin(data.user);
           console.log("login resp", data);
@@ -84,7 +84,7 @@ export class DataService {
     values.push(0);
     var keys = "username email password dispensary_id".split(' ');
     return this.postRequest('signup.php', this.makeData(keys, values))
-      .map(res => res.json())
+      .map(this.mapHandler)
       .do(res => this.localLogin(res.user));
   }
   getIsLoading() {
