@@ -11,7 +11,7 @@ user needs to be able to add a Dispensary - NIX
 search table
 Dispensary list needs to load more on scroll down if available
 strainlist - click dispensary name - unhandled
-
+sorting in dispensary menu 
 
 
 ## Site structure:

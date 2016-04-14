@@ -26,7 +26,7 @@ import { EditStrainComponent } from './edit-strain.component';
 })
 @RouteConfig([
   {path: '/', name: 'Index', component: IndexComponent  },
-  {path: '/search', name: 'Search', component: SearchComponent  },
+  {path: '/search/:term', name: 'Search', component: SearchComponent  },
   {path: '/dispensary/:id', name: 'Dispensary', component: DispensaryComponent },
   {path: '/dispensaryAdmin/:id', name: 'DispensaryAdmin', component: DispensaryAdminComponent},
   {path: '/user', name: 'User', component: UserComponent },
@@ -57,5 +57,11 @@ export class AppComponent {
         console.log("AppCmp", "User not found");
       }
     });
+  }
+  search(values) {
+    console.log(values);
+    if(values.search) {
+      this._router.navigate(['Search', {term: values.search}]);
+    }
   }
 }
