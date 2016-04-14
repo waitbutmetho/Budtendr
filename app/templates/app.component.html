@@ -1,3 +1,4 @@
+
 <header>
   <nav class="navbar navbar-transparent">
     <div class="container-fluid">
@@ -28,14 +29,65 @@
                 <li><a [routerLink]="['AllStrain']">All Strains</a></li>
                 <li><a [routerLink]="['AllDispensaries']">All Dispensaries</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a data-toggle="modal" data-target="#login-overlay" href="#">Log In | Sign Up</a></li>
+            </ul>
         </div>
+
+        <div id="login-overlay"class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Welcome to Budtendr</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="well">
+                    <form id="loginForm" (ngSubmit)="login(form.value)" #form="ngForm" novalidate="novalidate">
+                      <div class="form-group">
+                        <label for="username" class="control-label">Username</label>
+                        <input type="text" ngControl="username" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="username">
+                        <span class="help-block"></span>
+                      </div>
+                      <div class="form-group">
+                        <label for="password" class="control-label">Password</label>
+                        <input type="password" ngControl="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password" placeholder="password">
+                        <span class="help-block"></span>
+                      </div>
+                      <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+
+                      <input type="submit" name="submit" class="btn btn-success btn-block" value="Login!">
+
+
+                    </form>
+
+
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <p class="lead">What Budtendr can do for <span class="text-success">YOU</span></p>
+                  <ul class="list-unstyled" style="line-height: 2">
+                    <li><span class="fa fa-check text-success"></span> See all of your favorite strains</li>
+                    <li><span class="fa fa-check text-success"></span> Explore all local dispensaries near you</li>
+                    <li><span class="fa fa-check text-success"></span> Find the perfect strain for you</li>
+                    <li><span class="fa fa-check text-success"></span> No membership required</li>
+                    <li><span class="fa fa-check text-success"></span> Leave Reviews</li>
+                  </ul>
+                  <p><a [routerLink]="['SignUp']" class="btn btn-info btn-block" (click)="closeModal()">Yes please! Register now!</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->
 </nav>
 
       <ul>
-        <li>Home</li>
         <li><a [routerLink]="['Search']">Search</a></li>
         <li><a [routerLink]="['User']"> User</a></li>
         <li><a [routerLink]="['SignUp']">Sign Up</a></li>
@@ -46,7 +98,10 @@
 
 
       </ul>
+
     </header>
+
+
 
 
 

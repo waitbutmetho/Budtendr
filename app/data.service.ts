@@ -8,6 +8,7 @@ var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
 @Injectable()
 export class DataService {
   public user;
+  public isLoading = false;
   constructor(private _http: Http) {
   }
   handleError(error: Response) {
@@ -25,13 +26,15 @@ export class DataService {
     return output;
   }
   postRequest(url, data) {
-    console.log('post request', url, data);
+    console.log('post request', baseURL+url, data);
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.post(baseURL+url, data, { headers: headers}).do(data => console.log(data));
   }
-  getStrains(page=0) {
-    return this._http.get(baseURL + 'strainlist.php?page='+page)
+  getStrains(page=0, sortby="name", sortdir="asc") {
+    var url = baseURL + 'strainlist.php?page='+page+"&sortby="+sortby+"&sortdir="+sortdir;
+    console.log(url);
+    return this._http.get(url)
       .map(res => res.json())
       .do(data => console.log(data));
   }
@@ -48,14 +51,10 @@ export class DataService {
   login(user, pass) {
     var self = this;
     var keys = "username password".split(' ');
-    this.postRequest(baseURL+'login.php', this.makeData(keys, [user, pass]))
+    var values = [user, pass];
+    return this.postRequest('login.php', this.makeData(keys, values))
       .map(res => res.json())
-      .subscribe(function(user) {
-        if(!user.error) // user logged in successfully
-        {
-          self.user = user.user;
-        }
-      });
+      .do(data => console.log(data));
   }
   signUp(values) {
     values.push(0);
@@ -77,6 +76,11 @@ export class DataService {
     var keys = "name address city state phone email hours bio icon".split(' ');
     return this.postRequest('adddispensary.php', this.makeData(keys, values));
   }
+  editDispensary(values) {
+    console.log("Edit Disp", values);
+    var keys = "name address city state phone email hours bio icon".split(' ');
+    return this.postRequest('editdispensary.php', this.makeData(keys, values));
+  }
   search(term) {
 
   }
@@ -91,6 +95,10 @@ export class DataService {
 
   }
   updateUser() {
+
+  }
+
+  getStrainsForDispensary() {
 
   }
 }
