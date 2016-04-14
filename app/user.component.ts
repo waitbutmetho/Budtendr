@@ -9,7 +9,10 @@ import { RouteParams } from 'angular2/router';
 })
 
 export class UserComponent{
-  constructor( private _dataService: DataService){}
+  user;
+  constructor( private _dataService: DataService){
+    this.user = _dataService.user;
+  }
   editUserForm() {
     $('#userForm').toggle();
   }

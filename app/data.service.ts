@@ -55,7 +55,9 @@ export class DataService {
     this.postRequest('login.php', this.makeData(keys, values))
       .map(res => res.json())
       .do(data => console.log(data))
-      .subscribe(function(res) {});
+      .subscribe(function(res) {
+        self.user = res.user;
+      });
   }
   signUp(values) {
     values.push(0);
