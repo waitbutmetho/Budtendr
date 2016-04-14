@@ -24,13 +24,13 @@ export class AllStrainComponent implements OnInit{
           clearTimeout(_delayTimer);
           _delayTimer = setTimeout(function () {
               if ($(window).scrollTop() + $(window).height() > $(document).height()-100) {
-                if(!self._dataService.isLoading) {
+                if(!self._dataService.getIsLoading()) {
                   self.page++;
-                  self._dataService.isLoading = true;
+                  self._dataService.setIsLoading(true);
                   self._dataService.getStrains(self.page).subscribe(function(res) {
                     res.strains.forEach(function(strain){
                       self.strains.push(strain);
-                      self._dataService.isLoading = false;
+                      self._dataService.setIsLoading(false);
                     });
                   });
                 }

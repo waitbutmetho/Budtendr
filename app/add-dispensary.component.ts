@@ -8,7 +8,8 @@ import { DataService } from './data.service';
 })
 
 export class AddDispensaryComponent{
-  constructor(private _dataService: DataService){}
+  constructor(private _dataService: DataService){
+  }
   onSubmit(form) {
     var values = [];
     values.push(form['name']);

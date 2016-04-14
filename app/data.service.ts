@@ -2,13 +2,15 @@ import { Injectable } from 'angular2/core';
 import { Http, Response, Headers } from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
 
-// var baseURL = 'http://localhost/budtendr/';
-var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
+var baseURL = 'http://localhost/budtendr/';
+// var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
+
+var user;
+var loggedIn = false;
+var isLoading = false;
 
 @Injectable()
 export class DataService {
-  public user;
-  public isLoading = false;
   constructor(private _http: Http) {
   }
   handleError(error: Response) {
@@ -52,27 +54,41 @@ export class DataService {
     var self = this;
     var keys = "username password".split(' ');
     var values = [user, pass];
-    this.postRequest('login.php', this.makeData(keys, values))
-      .map(res => res.json())
-      .do(data => console.log(data))
-      .subscribe(function(res) {
-        self.user = res.user;
-      });
+    if(true) {
+      return this.postRequest('login.php', this.makeData(keys, values))
+        .map(res => res.json())
+        .do(function(data) {
+          self.localLogin(data.user);
+          console.log("login resp", data);
+        });
+    }
+  }
+  localLogin(newUser) {
+    user = newUser;
+    loggedIn = true;
+  }
+  logout() {
+    user = '';
+    loggedIn = false;
   }
   signUp(values) {
     values.push(0);
     var keys = "username email password dispensary_id".split(' ');
     return this.postRequest('signup.php', this.makeData(keys, values))
       .map(res => res.json())
-      .do(res => {
-        if(!res.error) {
-          this.localLogin(res.user);
-        }
-      });
+      .do(res => this.localLogin(res.user));
   }
-  localLogin(user) {
-    this.user = user;
-    console.log(this.user);
+  getIsLoading() {
+    return isLoading;
+  }
+  setIsLoading(bool) {
+    isLoading = bool;
+  }
+  loggedIn() {
+    return loggedIn;
+  }
+  getUser() {
+    return user;
   }
   addDispensary(values) {
     console.log("Add Disp", values);
@@ -100,7 +116,6 @@ export class DataService {
   updateUser() {
 
   }
-
   getStrainsForDispensary() {
 
   }
