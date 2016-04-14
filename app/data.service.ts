@@ -2,8 +2,8 @@ import { Injectable } from 'angular2/core';
 import { Http, Response, Headers } from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
 
-// var baseURL = 'http://localhost/budtendr/';
-var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
+var baseURL = 'http://localhost/budtendr/';
+// var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
 
 @Injectable()
 export class DataService {
@@ -26,7 +26,7 @@ export class DataService {
     return output;
   }
   postRequest(url, data) {
-    console.log('post request', url, data);
+    console.log('post request', baseURL+url, data);
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.post(baseURL+url, data, { headers: headers}).do(data => console.log(data));
@@ -49,13 +49,10 @@ export class DataService {
   login(user, pass) {
     var self = this;
     var keys = "username password".split(' ');
-    this.postRequest(baseURL+'login.php', this.makeData(keys, [user, pass]))
+    var values = [user, pass];
+    this.postRequest('login.php', this.makeData(keys, values))
       .map(res => res.json())
-      .do(function(res) {
-        if(!res.error) {// user logged in successfully
-          self.user = res.user;
-        }
-      });
+      .do(data => console.log(data));
   }
   signUp(values) {
     values.push(0);
