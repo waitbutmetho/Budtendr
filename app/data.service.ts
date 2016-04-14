@@ -31,8 +31,10 @@ export class DataService {
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.post(baseURL+url, data, { headers: headers}).do(data => console.log(data));
   }
-  getStrains(page=0) {
-    return this._http.get(baseURL + 'strainlist.php?page='+page)
+  getStrains(page=0, sortby="name", sortdir="asc") {
+    var url = baseURL + 'strainlist.php?page='+page+"&sortby="+sortby+"&sortdir="+sortdir;
+    console.log(url);
+    return this._http.get(url)
       .map(res => res.json())
       .do(data => console.log(data));
   }
@@ -50,7 +52,7 @@ export class DataService {
     var self = this;
     var keys = "username password".split(' ');
     var values = [user, pass];
-    this.postRequest('login.php', this.makeData(keys, values))
+    return this.postRequest('login.php', this.makeData(keys, values))
       .map(res => res.json())
       .do(data => console.log(data));
   }
@@ -97,6 +99,6 @@ export class DataService {
   }
 
   getStrainsForDispensary() {
-    
+
   }
 }
