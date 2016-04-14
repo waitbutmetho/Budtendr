@@ -11,7 +11,7 @@ import {DispensaryMenuComponent} from './dispensary-menu.component';
   template: `
     <tabs>
       <tab [tabName]="'Menu'"><dispensary-menu></dispensary-menu></tab>
-      <tab [tabName]="'Details'"><dispensary-details></dispensary-details></tab>
+      <tab [tabName]="'Map'"><dispensary-details></dispensary-details></tab>
     </tabs>
   `,
   directives: [TabsComponent, TabComponent, DispensaryDetailsComponent, DispensaryMenuComponent]
