@@ -71,15 +71,15 @@
               <div class="col-xs-6">
                 <div class="well">
                   <form (ngSubmit)="onSubmit(form.value)" #form="ngForm" class="form-horizontal">
-                  <h3>Sign up for a Budtendr account</h3>
+                    <h3>Sign up for a Budtendr account</h3>
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="username">Username</label>
                       <div class="col-sm-10">
-                            <input ngControl="username" #username="ngForm" type="text" class="form-control" id="username" required minlength="3">
-                      <div *ngIf="username.touched && username.errors">
-                        <div class="alert alert-danger" *ngIf="username.errors.required">Username is required.</div>
-                        <div class="alert alert-danger" *ngIf="username.errors.minlength">Username should be minimum 3 characters</div>
-                      </div>
+                        <input ngControl="username" #username="ngForm" type="text" class="form-control" id="username" required minlength="3">
+                        <div *ngIf="username.touched && username.errors">
+                          <div class="alert alert-danger" *ngIf="username.errors.required">Username is required.</div>
+                          <div class="alert alert-danger" *ngIf="username.errors.minlength">Username should be minimum 3 characters</div>
+                        </div>
 
 
                       </div>
@@ -87,23 +87,23 @@
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="email">Email</label>
                       <div class="col-sm-10">
-                            <input ngControl="email" #email="ngForm" type="text" class="form-control" id="email" required>
-                            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
+                        <input ngControl="email" #email="ngForm" type="text" class="form-control" id="email" required>
+                        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="password">Password</label>
                       <div class="col-sm-10">
-                            <input  ngControl="password" #password="ngForm" type="password" class="form-control" id="password">
+                        <input  ngControl="password" #password="ngForm" type="password" class="form-control" id="password">
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="confirm-password">Confirm Password</label>
                       <div class="col-sm-10">
-                            <input ngControl="confirm-password" #confirmPassword="ngForm" type="password" class="form-control" id="confirm-password">
+                        <input ngControl="confirm-password" #confirmPassword="ngForm" type="password" class="form-control" id="confirm-password">
                       </div>
                     </div>
-                        <button class="btn btn-success">Submit</button>
+                    <button class="btn btn-success">Submit</button>
                   </form>
 
                 </div>
