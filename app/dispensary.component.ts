@@ -12,6 +12,7 @@ import { TabContainerComponent } from './tab-container.component';
 export class DispensaryComponent{
   dispensary = [];
   strains = [];
+  map = "";
   constructor(private _router: Router, params: RouteParams, private _dataService: DataService) {
     this.getDispensary(params.get('id'));
   }
@@ -21,6 +22,7 @@ export class DispensaryComponent{
         var res = <any>resp;
         this.dispensary = res.dispensary;
         this.strains = res.strains;
+        this.map = res.mapslink;
         console.log(resp);
       } else {
         this._router.navigate(['Index']);
