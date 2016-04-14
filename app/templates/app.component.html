@@ -2,114 +2,119 @@
 <header>
   <nav class="navbar navbar-transparent">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-            aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Budtendr</a>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Budtendr</a>
+    </div>
+
+    <form class="navbar-form navbar-left" role="search">
+      <div class="input-group">
+        <input id="searchBar" type="text" class="form-control" placeholder="Search" name="search" id="search-term">
+        <div class="input-group-btn">
+          <button id="searchButtonHeader" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
         </div>
+      </div>
+    </form>
 
-        <form class="navbar-form navbar-left" role="search">
-             <div class="input-group">
-               <input id="searchBar" type="text" class="form-control" placeholder="Search" name="search" id="search-term">
-               <div class="input-group-btn">
-                 <button id="searchButtonHeader" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-               </div>
-             </div>
-         </form>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul  class="nav navbar-nav">
-                <li><a  [routerLink]="['AllStrain']" class="nav-links">All Strains</a></li>
-                <li><a [routerLink]="['AllDispensaries']" class="nav-links">All Dispensaries</a></li>
-            </ul>
-            <div *ngIf="_dataService.loggedIn() === true">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a [routerLink]="['User']">{{user.username}}</a></li>
-              </ul>
-            </div>
-            <div *ngIf="_dataService.loggedIn() === false">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a data-toggle="modal" data-target="#login-overlay" href="#">Log In | Sign Up</a></li>
-              </ul>
-            </div>
-
-        </div>
-
-        <div id="login-overlay"class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Welcome to Budtendr</h4>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-xs-6">
-                  <div class="well">
-                    <form id="loginForm" (ngSubmit)="login(form.value)" #form="ngForm" novalidate="novalidate">
-                      <div class="form-group">
-                        <label for="username" class="control-label">Username</label>
-                        <input type="text" ngControl="username" class="form-control" id="usernameLogin" name="username" value="" required="" title="Please enter you username" placeholder="username">
-                        <span class="help-block"></span>
-                      </div>
-                      <div class="form-group">
-                        <label for="password" class="control-label">Password</label>
-                        <input type="password" ngControl="password" class="form-control" id="passwordLogin" name="password" value="" required="" title="Please enter your password" placeholder="password">
-                        <span class="help-block"></span>
-                      </div>
-                      <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
-
-                      <input type="submit" name="submit" class="btn btn-success btn-block" value="Login!">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul  class="nav navbar-nav">
+        <li><a  [routerLink]="['AllStrain']" class="nav-links">All Strains</a></li>
+        <li><a [routerLink]="['AllDispensaries']" class="nav-links">All Dispensaries</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a [routerLink]="['Search']">Search</a></li>
+            <li><a [routerLink]="['User']"> User</a></li>
+            <li><a [routerLink]="['SignUp']">Sign Up</a></li>
+            <li><a [routerLink]="['AddDispensary']">Add Dispensary</a></li>
+            <li><a [routerLink]="['AddStrain']">Add Strain</a></li>
+            <li><a [routerLink]="['AllStrain']">All Strain</a></li>
+            <li><a [routerLink]="['AllDispensaries']">All Dispensaries</a></li>
+          </ul>
+        </li>
+      </ul>
 
 
-                    </form>
+      <div *ngIf="_dataService.loggedIn() === true">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a [routerLink]="['User']">{{user.username}}</a></li>
+        </ul>
+      </div>
+      <div *ngIf="_dataService.loggedIn() === false">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a data-toggle="modal" data-target="#login-overlay" href="#">Log In | Sign Up</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div id="login-overlay"class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Welcome to Budtendr</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="well">
+                  <form id="loginForm" (ngSubmit)="login(form.value)" #form="ngForm" novalidate="novalidate">
+                    <div class="form-group">
+                      <label for="username" class="control-label">Username</label>
+                      <input type="text" ngControl="username" class="form-control" id="usernameLogin" name="username" value="" required="" title="Please enter you username" placeholder="username">
+                      <span class="help-block"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="password" class="control-label">Password</label>
+                      <input type="password" ngControl="password" class="form-control" id="passwordLogin" name="password" value="" required="" title="Please enter your password" placeholder="password">
+                      <span class="help-block"></span>
+                    </div>
+                    <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+
+                    <input type="submit" name="submit" class="btn btn-success btn-block" value="Login!">
 
 
-                  </div>
+                  </form>
+
+
                 </div>
-                <div class="col-xs-6">
-                  <p class="lead">What Budtendr can do for <span class="text-success">YOU</span></p>
-                  <ul class="list-unstyled" style="line-height: 2">
-                    <li><span class="fa fa-check text-success"></span> See all of your favorite strains</li>
-                    <li><span class="fa fa-check text-success"></span> Explore all local dispensaries near you</li>
-                    <li><span class="fa fa-check text-success"></span> Find the perfect strain for you</li>
-                    <li><span class="fa fa-check text-success"></span> No membership required</li>
-                    <li><span class="fa fa-check text-success"></span> Leave Reviews</li>
-                  </ul>
-                  <p><a [routerLink]="['SignUp']" class="btn btn-info btn-block" (click)="closeModal()">Yes please! Register now!</a></p>
-                </div>
+              </div>
+              <div class="col-xs-6">
+                <p class="lead">What Budtendr can do for <span class="text-success">YOU</span></p>
+                <ul class="list-unstyled" style="line-height: 2">
+                  <li><span class="fa fa-check text-success"></span> See all of your favorite strains</li>
+                  <li><span class="fa fa-check text-success"></span> Explore all local dispensaries near you</li>
+                  <li><span class="fa fa-check text-success"></span> Find the perfect strain for you</li>
+                  <li><span class="fa fa-check text-success"></span> No membership required</li>
+                  <li><span class="fa fa-check text-success"></span> Leave Reviews</li>
+                </ul>
+                <p><a [routerLink]="['SignUp']" class="btn btn-info btn-block" (click)="closeModal()">Yes please! Register now!</a></p>
               </div>
             </div>
           </div>
         </div>
       </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container-fluid -->
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
 </nav>
 
-      <ul>
-        <li><a [routerLink]="['Search']">Search</a></li>
-        <li><a [routerLink]="['User']"> User</a></li>
-        <li><a [routerLink]="['SignUp']">Sign Up</a></li>
-        <li><a [routerLink]="['AddDispensary']">Add Dispensary</a></li>
-        <li><a [routerLink]="['AddStrain']">Add Strain</a></li>
-        <li><a [routerLink]="['AllStrain']">All Strain</a></li>
-        <li><a [routerLink]="['AllDispensaries']">All Dispensaries</a></li>
-      </ul>
 
-    </header>
+</header>
 
 
 
 
 
 
-    <router-outlet></router-outlet>
+<router-outlet></router-outlet>
