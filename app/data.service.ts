@@ -52,9 +52,10 @@ export class DataService {
     var self = this;
     var keys = "username password".split(' ');
     var values = [user, pass];
-    return this.postRequest('login.php', this.makeData(keys, values))
+    this.postRequest('login.php', this.makeData(keys, values))
       .map(res => res.json())
-      .do(data => console.log(data));
+      .do(data => console.log(data))
+      .subscribe(function(res) {});
   }
   signUp(values) {
     values.push(0);
