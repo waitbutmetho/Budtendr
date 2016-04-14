@@ -5,15 +5,26 @@ import { Observable } from 'rxjs/Observable';
 // var baseURL = 'http://localhost/budtendr/';
 var baseURL = "http://nicholasjensenhay.com/budtendrapi/";
 
+var user;
+var loggedIn = false;
+var isLoading = false;
+
 @Injectable()
 export class DataService {
-  public user;
-  public isLoading = false;
   constructor(private _http: Http) {
   }
-  handleError(error: Response) {
-    console.error( error );
-    return Observable.throw(error.json().error || "Server Error");
+  mapHandler(res) {
+    var error = false;
+    try {
+      console.log("MapHandler Trying", res);
+      return res.json();
+    } catch(e) {
+      error = true;
+    }
+    if(error) {
+      console.log("error", res);
+    }
+    return res;
   }
   makeData(keys, values) {
     var output = "";
@@ -35,44 +46,58 @@ export class DataService {
     var url = baseURL + 'strainlist.php?page='+page+"&sortby="+sortby+"&sortdir="+sortdir;
     console.log(url);
     return this._http.get(url)
-      .map(res => res.json())
+      .map(this.mapHandler)
       .do(data => console.log(data));
   }
   getDispensaries(page=0) {
     return this._http.get(baseURL+'dispensarylist.php?page='+page)
-      .map(res => res.json())
+      .map(this.mapHandler)
       .do(data => console.log(data));
   }
   getDispensary(id) {
     return this._http.get(baseURL+'dispensary.php?id='+id)
-      .map(res => res.json())
-      .do(data => console.log(data));
+      .map(this.mapHandler)
+      .do(data => console.log(data))
   }
   login(user, pass) {
     var self = this;
     var keys = "username password".split(' ');
     var values = [user, pass];
-    this.postRequest('login.php', this.makeData(keys, values))
-      .map(res => res.json())
-      .do(data => console.log(data))
-      .subscribe(function(res) {
-        self.user = res.user;
-      });
+    if(true) {
+      return this.postRequest('login.php', this.makeData(keys, values))
+        .map(this.mapHandler)
+        .do(function(data) {
+          self.localLogin(data.user);
+          console.log("login resp", data);
+        });
+    }
+  }
+  localLogin(newUser) {
+    user = newUser;
+    loggedIn = true;
+  }
+  logout() {
+    user = '';
+    loggedIn = false;
   }
   signUp(values) {
     values.push(0);
     var keys = "username email password dispensary_id".split(' ');
     return this.postRequest('signup.php', this.makeData(keys, values))
-      .map(res => res.json())
-      .do(res => {
-        if(!res.error) {
-          this.localLogin(res.user);
-        }
-      });
+      .map(this.mapHandler)
+      .do(res => this.localLogin(res.user));
   }
-  localLogin(user) {
-    this.user = user;
-    console.log(this.user);
+  getIsLoading() {
+    return isLoading;
+  }
+  setIsLoading(bool) {
+    isLoading = bool;
+  }
+  loggedIn() {
+    return loggedIn;
+  }
+  getUser() {
+    return user;
   }
   addDispensary(values) {
     console.log("Add Disp", values);
@@ -81,7 +106,7 @@ export class DataService {
   }
   editDispensary(values) {
     console.log("Edit Disp", values);
-    var keys = "name address city state phone email hours bio icon".split(' ');
+    var keys = "id name address city state phone email hours bio icon".split(' ');
     return this.postRequest('editdispensary.php', this.makeData(keys, values));
   }
   search(term) {
@@ -100,7 +125,6 @@ export class DataService {
   updateUser() {
 
   }
-
   getStrainsForDispensary() {
 
   }

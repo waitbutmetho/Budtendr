@@ -15,7 +15,7 @@ import {AllDispensariesComponent} from './all-dispensaries.component';
 import {IndexComponent} from './index.component';
 import {DataService} from './data.service';
 import {HTTP_PROVIDERS} from 'angular2/http';
-
+import { EditStrainComponent } from './edit-strain.component';
 
 @Component({
   selector: 'my-app',
@@ -34,10 +34,12 @@ import {HTTP_PROVIDERS} from 'angular2/http';
   {path: '/add-strain', name: 'AddStrain', component: AddStrainComponent },
   {path: '/all-strain', name: 'AllStrain', component: AllStrainComponent },
   {path: '/all-dispensaries', name: 'AllDispensaries', component: AllDispensariesComponent },
+  {path: '/manageMenu', name: 'ManageMenu', component: EditStrainComponent },
 ])
 export class AppComponent {
-
-  constructor(private _dataService: DataService){
+  user;
+  constructor(private _dataService: DataService, private _router: Router){
+    console.log(this._dataService);
     this._dataService.getDispensaries()
         .subscribe(dispensaries => console.log(dispensaries));
   }
@@ -46,6 +48,10 @@ export class AppComponent {
   }
   login(form) {
     var self = this;
-    this._dataService.login(form.username, form.password);
+    this._dataService.login(form.username, form.password).subscribe(function(res) {
+      self.user = res.user;
+      self._router.navigate(['User']);
+      $('#login-overlay').modal('hide');
+    });
   }
 }

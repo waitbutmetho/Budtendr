@@ -1,6 +1,9 @@
 <button (click)="editUserForm()">Edit User</button>
-<h1>UserName's Profile Page</h1>
-<span>Your email: email@email.com</span>
+<h1>{{loginname}}'s Profile Page</h1>
+<span>Your email: {{loginemail}}</span>
+<div *ngIf="dispensary_id>0">
+  <a href="/#/dispensaryAdmin/{{dispensary_id}}">Manage Your Dispensary</a>
+</div>
 
 
 <form hidden (ngSubmit)="onSubmit(form.value)" #form="ngForm" class="form-horizontal" id="userForm">
