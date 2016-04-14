@@ -15,24 +15,6 @@ input[type=submit] {
   width:100%;
 }
 
-
-
-// video#bgvid {
-//     position: fixed;
-//     top: 35vh;
-//     left: 50%;
-//     min-width: 100%;
-//     min-height: 100%;
-//     width: auto;
-//     height: auto;
-//     z-index: -100;
-//     -ms-transform: translateX(-50%) translateY(-50%);
-//     -moz-transform: translateX(-50%) translateY(-50%);
-//     -webkit-transform: translateX(-50%) translateY(-50%);
-//     transform: translateX(-50%) translateY(-50%);
-//     background-size: cover;
-// }
-
 #searchBar {
   display: flex;
   justify-content: center;
@@ -55,21 +37,6 @@ input {
 input[type=submit] {
   width: 100%; }
 
-// video#bgvid {
-//   position: fixed;
-//   top: 35vh;
-//   left: 50%;
-//   min-width: 100%;
-//   min-height: 100%;
-//   width: auto;
-//   height: auto;
-//   z-index: -100;
-//   -ms-transform: translateX(-50%) translateY(-50%);
-//   -moz-transform: translateX(-50%) translateY(-50%);
-//   -webkit-transform: translateX(-50%) translateY(-50%);
-//   transform: translateX(-50%) translateY(-50%);
-//   background-size: contain; }
-
   .homepage-hero-module {
     position: absolute;
     top: 40vh;
@@ -84,8 +51,6 @@ input[type=submit] {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     background-size: cover;
-
-
   }
 
 //video max height: 100vh, width 100% opacity, margin-bototm.
@@ -107,53 +72,9 @@ video {
     left: 0%;
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     background: #000;
   }
-  // .video-container .poster img {
-  //   width: 100%;
-  //   bottom: 0;
-  //   position: absolute;
-  // }
-  // .video-container .filter {
-  //   z-index: 100;
-  //   position: absolute;
-  //   background: rgba(0, 0, 0, 0.4);
-  //   width: 100%;
-  // }
-  // .video-container .title-container {
-  //   z-index: 1000;
-  //   position: absolute;
-  //   top: 35%;
-  //   width: 100%;
-  //   text-align: center;
-  //   color: #fff;
-  // }
-  // .video-container .description .inner {
-  //   font-size: 1em;
-  //   width: 45%;
-  //   margin: 0 auto;
-  // }
-  // .video-container .link {
-  //   position: absolute;
-  //   bottom: 3em;
-  //   width: 100%;
-  //   text-align: center;
-  //   z-index: 1001;
-  //   font-size: 2em;
-  //   color: #fff;
-  // }
-  // .video-container .link a {
-  //   color: #fff;
-  // }
-  // .video-container video {
-  //   position: absolute;
-  //   z-index: 0;
-  //   bottom: 0;
-  // }
-  // .video-container video.fillWidth {
-  //   width: 100%;
-  // }
 
 .featurette {
   margin-top: 75vh;
