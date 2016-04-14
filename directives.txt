@@ -2,6 +2,11 @@
 Todo:
 Error handling
   everywhere in service
+navbar shows username instead of login button
+dispensary table
+search table
+dispensary admin check for login and admin id
+
 
 ## Site structure:
 

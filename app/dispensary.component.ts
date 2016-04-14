@@ -1,8 +1,7 @@
 import { Component } from 'angular2/core';
 import { DataService } from './data.service';
-import { RouteParams } from 'angular2/router';
-import {TabContainerComponent} from './tab-container.component';
-
+import { RouteParams, Router } from 'angular2/router';
+import { TabContainerComponent } from './tab-container.component';
 
 @Component({
   directives: [TabContainerComponent],
@@ -10,13 +9,20 @@ import {TabContainerComponent} from './tab-container.component';
   templateUrl: 'app/templates/dispensary.component.html',
     styleUrls: ['../build/css/dispensary.component.css'],
 })
-
 export class DispensaryComponent{
   dispensary = [];
-  constructor(params: RouteParams, private _dataService: DataService) {
+  constructor(private _router: Router, params: RouteParams, private _dataService: DataService) {
     this.getDispensary(params.get('id'));
   }
   getDispensary(id) {
-    this._dataService.getDispensary(id).subscribe(resp => this.dispensary = resp.dispensary);
+    this._dataService.getDispensary(id).subscribe(resp => {
+      if( resp.status == undefined ) {
+        var res = <any>resp;
+        this.dispensary = res.dispensary;
+        console.log(resp);
+      } else {
+        this._router.navigate(['Index']);
+      }
+    });
   }
 }

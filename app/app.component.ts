@@ -15,7 +15,7 @@ import {AllDispensariesComponent} from './all-dispensaries.component';
 import {IndexComponent} from './index.component';
 import {DataService} from './data.service';
 import {HTTP_PROVIDERS} from 'angular2/http';
-
+import { EditStrainComponent } from './edit-strain.component';
 
 @Component({
   selector: 'my-app',
@@ -34,6 +34,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
   {path: '/add-strain', name: 'AddStrain', component: AddStrainComponent },
   {path: '/all-strain', name: 'AllStrain', component: AllStrainComponent },
   {path: '/all-dispensaries', name: 'AllDispensaries', component: AllDispensariesComponent },
+  {path: '/manageMenu', name: 'ManageMenu', component: EditStrainComponent },
 ])
 export class AppComponent {
   constructor(private _dataService: DataService, private _router: Router){
