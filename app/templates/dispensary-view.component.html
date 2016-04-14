@@ -1,8 +1,16 @@
-<div id="dispensary_banner">
-  <div class="top_dispensary_banner">
 
+<div class="all-disp">
+  <div class="disp-name-icon">
+    <img src="{{dispensary.icon}}" alt="{{dispensary.name}} icon"/>
+    <h4><a href="#/dispensary/{{dispensary.id}}">{{dispensary.name}}</a></h4>
   </div>
-  <div class="bottom_dispensary_banner">
-
+  <div class="disp-location">
+    <h6>{{dispensary.address}}</h6>
+    <h6>{{dispensary.city}}, {{dispensary.state}}</h6>
+    <h6>{{dispensary.hours}}</h6>
+  </div>
+  <div class="disp-contact">
+    <h4>{{dispensary.phone}}</h4>
+    <h4>{{dispensary.email}}</h4>
   </div>
 </div>

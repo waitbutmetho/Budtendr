@@ -6,11 +6,9 @@ import { DataService } from './data.service';
   selector:"all-dispensaries",
     directives:[DispensaryViewComponent],
     template: `
-      <h1>Dispensaries: {{page}}</h1>
-      <button (click)="nextPage()">Next Page</button><button (click)="prevPage()">Prev Page</button>
-      <dispensary-view *ngFor="#dispensary of dispensaries" [dispensary]="dispensary">
 
-      </dispensary-view>
+      <button (click)="nextPage()">Next Page</button><button (click)="prevPage()">Prev Page</button>
+      <dispensary-view *ngFor="#dispensary of dispensaries" [dispensary]="dispensary"></dispensary-view>
     `,
 
 })
