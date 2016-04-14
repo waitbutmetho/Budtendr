@@ -1,6 +1,6 @@
 
 <header>
-  <nav class="navbar navbar-transparent">
+  <nav class="navbar" [ngClass]="{'navbar-default': !isHomePage, 'navbar-transparent': isHomePage}">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
