@@ -14,9 +14,9 @@
       <a class="navbar-brand" href="#">Budtendr</a>
     </div>
 
-    <form class="navbar-form navbar-left" role="search">
+    <form (ngSubmit)="search(srchFrm.value)" #srchFrm="ngForm" class="navbar-form navbar-left" role="search">
       <div class="input-group">
-        <input id="searchBar" type="text" class="form-control" placeholder="Search" name="search" id="search-term">
+        <input id="searchBar" ngControl="search" type="text" class="form-control" placeholder="Search" name="search" id="search-term">
         <div class="input-group-btn">
           <button id="searchButtonHeader" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
         </div>
@@ -31,8 +31,6 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a [routerLink]="['Search']">Search</a></li>
-            <li><a [routerLink]="['User']"> User</a></li>
             <li><a [routerLink]="['SignUp']">Sign Up</a></li>
             <li><a [routerLink]="['AddDispensary']">Add Dispensary</a></li>
             <li><a [routerLink]="['AddStrain']">Add Strain</a></li>
@@ -43,15 +41,82 @@
       </ul>
       <div *ngIf="_dataService.loggedIn() === true">
         <ul class="nav navbar-nav navbar-right">
-          <li><a [routerLink]="['User']">{{user.username}}</a></li>
+          <li>{{user.username}}</li>
         </ul>
       </div>
       <div *ngIf="_dataService.loggedIn() === false">
         <ul class="nav navbar-nav navbar-right">
-          <li><a data-toggle="modal" data-target="#login-overlay" href="#">Log In | Sign Up</a></li>
+          <li><a data-toggle="modal" data-target="#signup-overlay" href="#">Sign Up</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a data-toggle="modal" data-target="#login-overlay" href="#">Log In</a></li>
         </ul>
       </div>
+    </div>
+    <div id="signup-overlay"class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Welcome to Budtendr</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="well">
+                  <form (ngSubmit)="onSubmit(form.value)" #form="ngForm" class="form-horizontal">
+                    <h3>Sign up for a Budtendr account</h3>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="username">Username</label>
+                      <div class="col-sm-10">
+                        <input ngControl="username" #username="ngForm" type="text" class="form-control" id="username" required minlength="3">
+                        <div *ngIf="username.touched && username.errors">
+                          <div class="alert alert-danger" *ngIf="username.errors.required">Username is required.</div>
+                          <div class="alert alert-danger" *ngIf="username.errors.minlength">Username should be minimum 3 characters</div>
+                        </div>
 
+
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="email">Email</label>
+                      <div class="col-sm-10">
+                        <input ngControl="email" #email="ngForm" type="text" class="form-control" id="email" required>
+                        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="password">Password</label>
+                      <div class="col-sm-10">
+                        <input  ngControl="password" #password="ngForm" type="password" class="form-control" id="password">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="confirm-password">Confirm Password</label>
+                      <div class="col-sm-10">
+                        <input ngControl="confirm-password" #confirmPassword="ngForm" type="password" class="form-control" id="confirm-password">
+                      </div>
+                    </div>
+                    <button class="btn btn-success">Submit</button>
+                  </form>
+
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <p class="lead">What Budtendr can do for <span class="text-success">YOU</span></p>
+                <ul class="list-unstyled" style="line-height: 2">
+                  <li><span class="fa fa-check text-success"></span> See all of your favorite strains</li>
+                  <li><span class="fa fa-check text-success"></span> Explore all local dispensaries near you</li>
+                  <li><span class="fa fa-check text-success"></span> Find the perfect strain for you</li>
+                  <li><span class="fa fa-check text-success"></span> No membership required</li>
+                  <li><span class="fa fa-check text-success"></span> Leave Reviews</li>
+                </ul>
+                <p><a [routerLink]="['SignUp']" class="btn btn-info btn-block" (click)="closeModal()">Yes please! Register now!</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="login-overlay"class="modal fade" role="dialog">
@@ -106,13 +171,5 @@
   </div>
   <!-- /.container-fluid -->
 </nav>
-
-
 </header>
-
-
-
-
-
-
 <router-outlet></router-outlet>
