@@ -7,6 +7,18 @@
   display: flex;
   justify-content: center;
 }
+.iframe {
+  position: relative;
+  padding-bottom: 35%; // This is the aspect ratio
+  overflow: hidden;
+}
+.iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 300px !important;
+}
 
 #searchBar {
   display: flex;
