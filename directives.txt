@@ -7,7 +7,8 @@ images - which are links in the db and are fixed by putting new data in the data
 figure out why 1/4 and 1/8 prices are reversed, or reverse them
 map - josh
 overall styling? more color?
-RIP OUT PAGE BTN DISP LIST
+rip out pages btn in disp list
+readme
 
 ## Site structure:
 
