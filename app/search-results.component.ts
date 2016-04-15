@@ -6,6 +6,7 @@ import { StrainViewMenuComponent } from './strain-view-menu.component';
   directives: [StrainViewMenuComponent],
   inputs:['dispensary'],
   templateUrl: "app/templates/search-results.component.html" ,
+  styleUrls: ['../build/css/search-results.css']
 })
 export class SearchResultsComponent{
 
