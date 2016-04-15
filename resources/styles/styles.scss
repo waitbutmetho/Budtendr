@@ -3,21 +3,29 @@
   display: flex;
   flex-direction: column;
 }
+
+.navbar {
+    margin-bottom: 0px;
+    border-radius: 0px;
+    background-color: #F1F8E9;
+    border: none;
+}
+
 .controlsMenu {
   display: flex;
   justify-content: center;
 }
 .iframe {
   position: relative;
-  padding-bottom: 35%; // This is the aspect ratio
+  padding-bottom: 45%; // This is the aspect ratio
   overflow: hidden;
 }
 .iframe iframe {
   position: absolute;
-  top: 0;
-  left: 0;
+  // top: 0;
+  // left: 0;
   width: 100% !important;
-  height: 300px !important;
+  height: 500px !important;
 }
 
 #searchBar {
