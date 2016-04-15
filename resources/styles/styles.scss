@@ -3,6 +3,14 @@
   display: flex;
   flex-direction: column;
 }
+
+.navbar {
+    margin-bottom: 0px;
+    border-radius: 0px;
+    background-color: #F1F8E9;
+    border: none;
+}
+
 .controlsMenu {
   display: flex;
   justify-content: center;
