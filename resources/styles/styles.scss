@@ -4,10 +4,20 @@
   flex-direction: column;
 }
 
+
+.navbar-default .navbar-brand {
+  color:white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+
 .navbar {
     margin-bottom: 0px;
     border-radius: 0px;
-    background-color: #F1F8E9;
+    background: rgba(104,159,56,0.7);
     border: none;
 }
 
