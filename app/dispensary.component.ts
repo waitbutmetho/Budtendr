@@ -29,4 +29,29 @@ export class DispensaryComponent{
       }
     });
   }
+
+  sortBy = '';
+  sortDir = 'asc';
+  sort(sortBy) {
+    console.log('dispsort', sortBy);
+    if(sortBy === this.sortBy) {
+      this.flipSortDir();
+    }
+    this.sortBy = sortBy;
+    var self = this;
+    var dispensary = <any>this.dispensary;
+    this._dataService.getStrainsForDispensary(dispensary.id, this.sortBy, this.sortDir).subscribe(function(res) {
+      self.strains = res.strains;
+    });
+  }
+  flipSortDir() {
+    var dir = this.sortDir;
+    if(dir == "asc") {
+      dir = "desc";
+    } else {
+      dir = "asc";
+    }
+    this.sortDir = dir;
+  }
+
 }
