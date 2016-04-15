@@ -5,15 +5,10 @@ import {Router, RouteConfig, RouteParams} from 'angular2/router';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {SearchComponent} from './search.component';
 import {DispensaryComponent} from './dispensary.component';
-import {DispensaryAdminComponent} from './dispensary-admin.component';
-import {SignUpComponent} from './signup.component';
-import {AddDispensaryComponent} from './add-dispensary.component';
-import {AddStrainComponent} from './add-strain.component';
 import {AllStrainComponent} from './all-strain.component';
 import {AllDispensariesComponent} from './all-dispensaries.component';
 import {IndexComponent} from './index.component';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import { EditStrainComponent } from './edit-strain.component';
 
 @Component({
   selector: 'my-app',
@@ -25,13 +20,8 @@ import { EditStrainComponent } from './edit-strain.component';
   {path: '/', name: 'Index', component: IndexComponent  },
   {path: '/search/:term', name: 'Search', component: SearchComponent  },
   {path: '/dispensary/:id', name: 'Dispensary', component: DispensaryComponent },
-  {path: '/dispensaryAdmin/:id', name: 'DispensaryAdmin', component: DispensaryAdminComponent},
-  {path: '/sign-up', name: 'SignUp', component: SignUpComponent },
-  {path: '/add-dispensary', name: 'AddDispensary', component: AddDispensaryComponent },
-  {path: '/add-strain', name: 'AddStrain', component: AddStrainComponent },
   {path: '/all-strain', name: 'AllStrain', component: AllStrainComponent },
   {path: '/all-dispensaries', name: 'AllDispensaries', component: AllDispensariesComponent },
-  {path: '/manageMenu', name: 'ManageMenu', component: EditStrainComponent },
 ])
 export class AppComponent {
   constructor(private _router: Router){
