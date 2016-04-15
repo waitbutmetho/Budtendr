@@ -129,16 +129,10 @@ export class DataService {
     var keys = "dispensary_id name thc cbd organic geno rec_price_gram rec_price_eighth rec_price_quarter rec_price_half rec_price_ounce med_price_gram med_price_eighth med_price_quarter med_price_half med_price_ounce".split(' ');
     return this.postRequest('addstrain.php', this.makeData(keys, values));
   }
-  updateStrain() {
-
-  }
-  updateDispensary() {
-
-  }
-  updateUser() {
-
-  }
-  getStrainsForDispensary() {
-
+  getStrainsForDispensary(id, sortby, sortdir) {
+    console.log("getstraindisp", id, sortby, sortdir);
+    return this._http.get(baseURL+'getstrainsbydispensary.php?id='+id+'&sortby='+sortby+'&sortdir='+sortdir)
+      .map(this.mapHandler)
+      .do(res => console.log(res));
   }
 }

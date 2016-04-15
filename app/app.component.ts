@@ -19,7 +19,6 @@ import { EditStrainComponent } from './edit-strain.component';
 @Component({
   selector: 'my-app',
   templateUrl: 'app/templates/app.component.html',
-  styleUrls: ['../build/css/app.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [DataService, HTTP_PROVIDERS]
 })
@@ -37,9 +36,11 @@ import { EditStrainComponent } from './edit-strain.component';
 ])
 export class AppComponent {
   user;
+  isHomePage = false;
   constructor(private _dataService: DataService, private _router: Router){
     console.log(this._dataService);
-    this.user = this._dataService.getUser();
+    this._dataService.getDispensaries()
+        .subscribe(dispensaries => console.log(dispensaries));
   }
   closeModal() {
     $('#login-overlay').modal('hide');
@@ -53,6 +54,7 @@ export class AppComponent {
       } else {
         console.log("AppCmp", "User not found");
       }
+
     });
   }
   search(values) {
