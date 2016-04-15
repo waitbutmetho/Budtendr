@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4 text-center">
-      <img src="{{dispensary.icon}}" alt="{{dispensary.name}} Logo" height="100" width="100">
+      <img style="background:black" src="http://nicholasjensenhay.com/budtend/img/{{dispensary.icon}}" alt="{{dispensary.name}} Logo" height="100" width="100">
     </div>
     <div class="col-sm-8 text-center">
       <h1>{{dispensary.name}}</h1>
@@ -38,5 +38,5 @@
         <p>{{dispensary.bio}}</p>
       </div>
     </div>
-    <tab-container [strains]="strains" [map]="map"></tab-container>
+    <tab-container [strains]="strains" [map]="map" (sortBy)="sort($event)"></tab-container>
   </div>
