@@ -20,6 +20,16 @@
 
 }
 
+.controlsMenu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.midButton {
+  border: 1px solid red;
+  padding-left: 30px;
+}
+
 .button__bar {
   display: flex;
   justify-content: center;
