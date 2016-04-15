@@ -1,10 +1,10 @@
 
 TODO MVP:
-Sorting dispensary menu items - Nick
+Sorting dispensary menu items - Nick - DONE
 style search results - Alex
 nix logins entirely - Mike
 images - which are links in the db and are fixed by putting new data in the database. - DONE
-figure out why 1/4 and 1/8 prices are reversed, or reverse them
+figure out why 1/4 and 1/8 prices are reversed, or reverse them - Nick
 map - josh
 overall styling? more color?
 rip out pages btn in disp list
