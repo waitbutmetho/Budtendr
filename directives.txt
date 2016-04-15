@@ -1,19 +1,13 @@
 
-Todo FUNCITONALITY:
-Error handling
-  everywhere in service DONE
-dispensary table - DONE
-dispensary admin check for login and admin id - DONE
-navbar shows username instead of login button - DONE
-Menu displaying on dispensary page - DONE
-Manage menu for dispensaries - NIX
-user needs to be able to add a Dispensary - NIX
-search table - DONE
-Dispensary list needs to load more on scroll down if available - DONE
-search sorting
-strainlist - click dispensary name - unhandled
-sorting in dispensary menu
-
+TODO MVP:
+Sorting dispensary menu items - Nick
+style search results - Alex
+nix logins entirely - Mike
+images - which are links in the db and are fixed by putting new data in the database. - DONE
+figure out why 1/4 and 1/8 prices are reversed, or reverse them
+map - josh
+overall styling? more color?
+RIP OUT PAGE BTN DISP LIST
 
 ## Site structure:
 
