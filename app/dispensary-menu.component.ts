@@ -8,6 +8,7 @@ import { StrainViewMenuComponent } from './strain-view-menu.component';
   directives:[StrainViewMenuComponent],
   selector: "dispensary-menu",
   templateUrl: "app/templates/dispensary-menu.component.html",
+  styleUrls: ['../build/css/all-strain.component.css']
 })
 
 export class DispensaryMenuComponent{
