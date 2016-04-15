@@ -55,8 +55,8 @@ export class DataService {
       .map(this.mapHandler)
       .do(data => console.log(data));
   }
-  getDispensaries(page=0) {
-    return this._http.get(baseURL+'dispensarylist.php?page='+page)
+  getDispensaries() {
+    return this._http.get(baseURL+'dispensarylist.php?page=0')
       .map(this.mapHandler)
       .do(data => console.log(data));
   }
@@ -65,60 +65,16 @@ export class DataService {
       .map(this.mapHandler)
       .do(data => console.log(data))
   }
-  login(user, pass) {
-    var self = this;
-    var keys = "username password".split(' ');
-    var values = [user, pass];
-    if(true) {
-      return this.postRequest('login.php', this.makeData(keys, values))
-        .map(this.mapHandler)
-        .do(function(data) {
-          if(!data.error) {
-            self.localLogin(data.user);
-          }
-        });
-    }
-  }
-  localLogin(newUser) {
-    user = newUser;
-    loggedIn = true;
-  }
-  logout() {
-    user = '';
-    loggedIn = false;
-  }
-  signUp(values) {
-    values.push(0);
-    var keys = "username email password dispensary_id".split(' ');
-    return this.postRequest('signup.php', this.makeData(keys, values))
-      .map(this.mapHandler)
-      .do(res => {
-        if(!res.error) {
-          this.localLogin(res.user);
-        }
-      });
-  }
   getIsLoading() {
     return isLoading;
   }
   setIsLoading(bool) {
     isLoading = bool;
   }
-  loggedIn() {
-    return loggedIn;
-  }
-  getUser() {
-    return user;
-  }
   addDispensary(values) {
     console.log("Add Disp", values);
     var keys = "name address city state phone email hours bio icon".split(' ');
     return this.postRequest('adddispensary.php', this.makeData(keys, values));
-  }
-  editDispensary(values) {
-    console.log("Edit Disp", values);
-    var keys = "id name address city state phone email hours bio icon".split(' ');
-    return this.postRequest('editdispensary.php', this.makeData(keys, values));
   }
   search(term) {
     return this._http.get(baseURL+'search.php?search='+term)
