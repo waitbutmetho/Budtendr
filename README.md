@@ -1,13 +1,17 @@
-#Budtendr 2.0.0
+#Budtendr 0.ng2
 
-####  _4.7.2016_
+####  _4.15.2016_
 
-### By _** Nicholas Jensen-Hay, Alexander Fallenstedt, Mike Dada, Joshua Gustafason **_
+### By Nicholas Jensen-Hay, Alexander Fallenstedt, Mike Dada, Joshua Gustafason
 
 ## Description
 
 
-_The project was put together using Angular2, MySQL, and das b00tstrap ya.
+The project was put together using Angular2, MySQL, PHP, Javascript, Typescript, Coffeescript, and SASS. Adobe Premiere was used to build a webm. Agile Development was used for managing our directives file.
+
+The goal of this project was to explore the Angular2 framework and to write a custom API.
+
+Users can search, find, and explore cannabis strains.
 
 ## Setup/Installation
 
@@ -22,22 +26,11 @@ _The project was put together using Angular2, MySQL, and das b00tstrap ya.
 
         ./serve.sh
 
-* in bash to config atom, install node and bower dependencies and build your project
+* install node and bower dependencies and build your project
 
 * Gulp is used to handle both building the site and launching a server to host the site...
 
-## Known Bugs
-
-Please organize bugs here by the pages they are on: 
-
-*Index Page:
-
-*Dispensary Page
-
-*User Page
-
-*Search Page
-
+* The API is hosted remotely and availability may change without notice
 
 
 ## Technologies Used
@@ -45,6 +38,7 @@ Please organize bugs here by the pages they are on:
 * _This project was built on [Node.js](https://nodejs.org/en/)._
 * _Dependencies were handled with [npm](https://www.npmjs.com/) and [Bower](http://bower.io/)._
 * _[Gulp](http://gulpjs.com/) is an awesome asset pipeline used in this project._
+* _[Angular2](https://angular.io/)_
 
 ### License
 

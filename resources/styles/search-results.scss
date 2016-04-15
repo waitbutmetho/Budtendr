@@ -1,0 +1,25 @@
+// * {
+//   border: 1px solid red;
+// }
+
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.all-disp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  .row1, {
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .group2-3 {
+    width: 30vw;
+  }
+}
