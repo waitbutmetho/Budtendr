@@ -12,7 +12,6 @@ import {AddStrainComponent} from './add-strain.component';
 import {AllStrainComponent} from './all-strain.component';
 import {AllDispensariesComponent} from './all-dispensaries.component';
 import {IndexComponent} from './index.component';
-import {DataService} from './data.service';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import { EditStrainComponent } from './edit-strain.component';
 
@@ -20,7 +19,7 @@ import { EditStrainComponent } from './edit-strain.component';
   selector: 'my-app',
   templateUrl: 'app/templates/app.component.html',
   directives: [ROUTER_DIRECTIVES],
-  providers: [DataService, HTTP_PROVIDERS]
+  providers: [HTTP_PROVIDERS]
 })
 @RouteConfig([
   {path: '/', name: 'Index', component: IndexComponent  },
@@ -35,30 +34,9 @@ import { EditStrainComponent } from './edit-strain.component';
   {path: '/manageMenu', name: 'ManageMenu', component: EditStrainComponent },
 ])
 export class AppComponent {
-  user;
-  isHomePage = false;
-  constructor(private _dataService: DataService, private _router: Router){
-    console.log(this._dataService);
-    this._dataService.getDispensaries()
-        .subscribe(dispensaries => console.log(dispensaries));
-  }
-  closeModal() {
-    $('#login-overlay').modal('hide');
-  }
-  login(form) {
-    var self = this;
-    this._dataService.login(form.username, form.password).subscribe(function(res) {
-      if(!res.error) {
-        self.user = res.user;
-        $('#login-overlay').modal('hide');
-      } else {
-        console.log("AppCmp", "User not found");
-      }
-
-    });
+  constructor(private _router: Router){
   }
   search(values) {
-    console.log(values);
     if(values.search) {
       this._router.navigate(['Search', {term: values.search}]);
     }

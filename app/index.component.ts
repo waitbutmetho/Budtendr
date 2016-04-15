@@ -1,15 +1,13 @@
 import { Component } from 'angular2/core';
-import { DataService } from "./data.service";
-
+import { Router } from 'angular2/router';
 
 @Component({
-  providers: [DataService],
   templateUrl:"app/templates/index.component.html"
-
 })
-
 export class IndexComponent{
-  constructor(private _dataService: DataService) {
-    
+  constructor(private _router: Router) {
+  }
+  search(values) {
+    this._router.navigate(['Search', {term: values.search}]);
   }
 }
